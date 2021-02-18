@@ -1,0 +1,8906 @@
+@font-face
+  font-family: "Helvetica Neue Cyr"
+  src: url('../fonts/helveticaneuecyr-roman.ttf')
+  font-style: normal
+  font-weight: normal
+
+/* Основные стили
+
+html
+  box-sizing: border-box
+  scroll-behavior: smooth
+
+*
+  box-sizing: inherit
+
+  &::before, &::after
+    box-sizing: inherit
+
+body
+  max-width: 1920px
+  margin: 0px auto
+  font-family: 'Helvetica Neue Cyr'
+  font-style: normal
+  font-size: 16px
+  line-height: 1.2
+  font-weight: normal
+  color: #010101
+  overflow: hidden
+
+/* Центратор
+
+.wrapper
+  width: 73%
+  margin: 0px auto
+  display: flex
+  flex-wrap: wrap
+  @media screen and ( max-width: 1400px)
+    width: 90%
+    
+
+/* Шапка
+
+header
+  width: 100%
+  display: block
+  background-color: #685A51
+  border-bottom: 2px solid rgba(240, 239, 238, 0.7)
+  @media screen and ( max-width: 1742px)
+    > .wrapper
+        width: 90%
+
+.topNav.firstNavMenu
+  display: none
+  background-color: #333
+  position: relative
+
+  > .wrapper
+      justify-content: space-between
+  
+  .brandLogo
+    display: none
+    position: absolute
+
+    @media screen and ( max-width: 576px)
+      display: block
+      top: 55%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 80px  
+
+
+  @media screen and ( max-width: 1199px)
+    display: flex
+    padding: 10px 0px
+
+    .nav-item
+      &:first-of-type
+        .youCityPosition
+          display: none
+      
+      &:nth-of-type(4)
+        .nav-link
+          .ourMail
+            display: none
+
+      @media screen and ( max-width: 1024px)
+        &:not(:first-of-type)
+          margin-left: 0px
+      @media screen and ( max-width: 890px)
+        &:first-of-type
+          width: 20px
+          height: auto
+          padding-left: 0px
+          padding-right: 0px
+          display: flex
+          align-s: center
+          &::before
+            display: none
+          &::after
+            display: none
+          .nav-link
+            font-size: 0px
+            display: flex
+            align-items: center 
+
+            .youCityPosition
+              display: inline-block
+              height: 16px
+              width: 16px
+        
+      @media screen and ( max-width: 768px)
+        &:nth-of-type(4)
+          padding: 0px
+
+          &::before
+            display: none
+
+          .nav-link
+            font-size: 0px
+            display: flex
+            align-items: center
+
+            .ourMail
+              display: inline-block
+              height: 20px
+              width: 20px
+
+      @media screen and ( max-width: 576px)
+        &:nth-of-type(2)
+          display: none
+
+        &:nth-of-type(3)
+          display: none
+        
+        &:nth-of-type(4)
+          display: none
+          
+    
+      &:nth-of-type(2)
+        &::before
+          top: -1px
+  
+      &:last-of-type
+        padding-left: 0px
+
+        img
+          display: block
+
+        &::before
+          display: none
+
+.navbar
+  display: block
+  width: 100%
+  background-color: inherit
+  padding-top: 12px
+  padding-bottom: 20px
+  margin: 0px auto
+  @media screen and ( max-width: 1199px)
+    padding-top: 10px
+    padding-bottom: 10px
+
+.container-fluid
+  width: 100%
+  padding-left: 0px
+  padding-right: 0px
+  @media screen and ( max-width: 576px)
+    flex-direction: row-reverse
+    .headerLogo
+      display: none
+
+.navbar-brand
+  display: block
+  height: 67px
+  margin-left: 0px
+  @media screen and ( max-width: 1199px)
+    height: 30px
+
+    img
+      height: 30px  
+
+.searchField
+  display: none
+  position: relative
+  flex: 1 0 auto
+  min-width: 50px
+  @media screen and ( max-width: 1199px)
+    display: block
+
+    .navSearch
+      display: block
+      width: 100%
+      border: .1rem solid #babac0
+      border-radius: 4px
+      padding: 10px 88px 10px 16px
+      &:focus
+        outline: none
+    
+      @media screen and ( max-width: 556px)
+        padding: 10px 18px 10px 5px
+        
+
+  .navSearchBtn
+    width: 34px
+    height: 34px
+    position: absolute
+    right: 10px
+    top: 50%
+    border: none
+    border-radius: 3px
+    background-color: #EC8B33
+    transform: translateY(-50%)
+    background-image: url('../img/svg/header_page1/searchIcon.svg')
+    background-position: center
+    background-repeat: no-repeat
+    &:focus
+      outline: none
+
+// Стилизация бургер меню
+.navbar-toggler
+  border: none
+  padding: 0px
+
+  &:focus
+    box-shadow: none
+
+.ham 
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent
+    transition: transform 400ms
+    -moz-user-select: none
+    -webkit-user-select: none
+    -ms-user-select: none
+    user-select: none
+    @media screen and ( max-width: 576px)
+      margin-right: 20px
+      position: relative
+      right: 12px
+
+      @media screen and ( max-width: 336px)
+        width: 50px
+        margin-right: 10px
+        
+
+.hamRotate.active1 
+    transform: rotate(45deg)
+
+.line 
+    fill: none
+    transition: stroke-dasharray 500ms, stroke-dashoffset 500ms
+    stroke: #FFFFFF
+    stroke-width: 4
+    stroke-linecap: round
+
+.ham1 
+  .top 
+    stroke-dasharray: 40 139
+
+.ham1 
+  .bottom 
+    stroke-dasharray: 40 180
+
+.ham1.active1 
+  .top 
+    stroke-dashoffset: -98px
+
+.ham1.active1 
+  .bottom 
+    stroke-dashoffset: -138px
+
+
+.logoText
+  display: block
+  text-align: right
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+  margin-right: 16px
+  @media screen and ( max-width: 1199px)
+    font-size: 12px
+
+.headerMenu
+  display: flex
+  flex-direction: column
+  width: auto
+  align-items: flex-end
+  @media screen and ( max-width: 1199px)
+    flex-direction: column-reverse
+    width: 100%
+    // margin-top: 20px
+
+.firstNavMenu
+  display: flex
+  width: 100%
+  padding-bottom: 20px
+  justify-content: space-between
+  @media screen and ( max-width: 1199px)
+    display: none
+
+  .nav-item
+    position: relative
+
+    &:not(:first-of-type)
+      margin-left: 40px
+
+    &:first-of-type
+      padding-left: 24px
+      padding-right: 11px
+
+.headerCityName
+  color: #999999
+
+.firstNavMenu .nav-item
+  &:first-of-type
+    &::before
+      content: ''
+      display: inline-block
+      width: 16px
+      height: 16px
+      background-image: url('../img/svg/header_page1/mapMarkerIcon_header.svg')
+      position: absolute
+      left: 0
+
+    &::after
+      content: ''
+      display: inline-block
+      width: 3px
+      height: 13px
+      background-image: url('../img/svg/header_page1/chooseIcon.svg')
+      position: absolute
+      right: 0
+      top: 3px
+
+  &:nth-of-type(2)
+    display: flex
+    align-items: center
+    position: relative
+    padding-left: 28px
+
+    &::before
+      content: ''
+      display: inline-block
+      width: 20px
+      height: 20px
+      background-image: url('../img/svg/header_page1/stockIcon.svg')
+      position: absolute
+      left: 0
+
+  &:nth-of-type(3)
+    display: flex
+    align-items: center
+    position: relative
+    padding-left: 28px
+
+    &::before
+      content: ''
+      display: inline-block
+      width: 20px
+      height: 20px
+      position: absolute
+      background-image: url('../img/svg/header_page1/clockIcon.svg')
+      left: 0
+
+  &:nth-of-type(4)
+    display: flex
+    align-items: center
+    position: relative
+    padding-left: 28px
+
+    &::before
+      content: ''
+      display: inline-block
+      width: 20px
+      height: 20px
+      left: 0
+      position: absolute
+      background-image: url('../img/svg/header_page1/mailIcon.svg')
+
+  &:last-of-type
+    display: flex
+    align-items: center
+    position: relative
+    padding-left: 28px
+
+    &::before
+      content: ''
+      display: inline-block
+      width: 20px
+      height: 20px
+      background-image: url('../img/svg/header_page1/phoneIcon.svg')
+      position: absolute
+      left: 0
+
+  .nav-link
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 20px
+    padding: 0px
+    color: #FFFFFF
+    text-decoration: none
+
+    &:hover, &:focus
+      color: #FFFFFF
+
+.secondNavbar
+  display: flex
+  justify-content: space-between
+  width: 100%
+  padding-top: 20px
+  border-top: 2px solid rgba(240, 239, 238, 0.7)
+  @media screen and ( max-width: 1199px)
+    border-top: none
+    flex-direction: column
+
+  .secondNavbarMenu
+    display: flex
+    @media screen and ( max-width: 1199px)
+      flex-direction: column
+
+    .nav-item
+
+      a
+        margin-top: 4px
+        @media screen and ( max-width: 1199px)
+          margin-bottom: 30px
+
+      &:not(:first-of-type)
+        margin-left: 38px
+        @media screen and ( max-width: 1199px)
+          margin-left: 0px
+          
+
+      .nav-link
+        font-style: normal
+        font-weight: normal
+        font-size: 19px
+        line-height: 28px
+        color: #FFFFFF
+        text-decoration: none
+        padding: 0px
+        position: relative
+
+        &:hover, &:focus
+          color: #EC8B33
+
+  .secondNavbarIcons
+    display: flex
+    align-items: flex-start
+    @media screen and ( max-width: 1199px)
+      display: none
+
+    .nav-item
+      position: relative
+      
+      a
+        margin-top: 6px
+        padding: 0px
+
+      &:not(:first-of-type)
+        margin-left: 42px
+
+      &:nth-of-type(1)
+        width: 40px
+        height: 24px
+        border-radius: 47% 47% 0% 47%
+        background-color: #EC8B33
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-left: 96px
+
+        .quantityPurchase
+          font-style: normal
+          font-weight: normal
+          font-size: 19px
+          line-height: 24px
+          color: #010101
+
+      &:nth-of-type(2)
+        margin-left: 4px
+
+      &:nth-of-type(3), &:last-of-type
+        margin-left: 24px
+        display: flex
+        align-items: center
+        position: relative
+
+/* ГЛАВНАЯ СТРАНИЦА
+/* Первая секция. 1 страница. Главная
+
+.sectionOne_index
+  display: block
+  max-width: 100%
+
+/* Слайдер 1. 1 страница. Главная
+
+.slider1_index
+  width: 100%
+  height: 668px
+  position: relative
+  z-index: 
+  @media screen and ( max-width: 1024px)
+    height: 448px
+  @media screen and ( max-width: 768px)
+    height: 300px
+
+  .slick-track
+    display: flex
+    position: relative
+
+  .s1_slide_index
+
+    img
+      object-fit: cover
+      width: 100%
+      height: 668px
+      @media screen and ( max-width: 1024px)
+        height: 448px      
+      @media screen and ( max-width: 768px)
+        height: 300px
+
+  .slideContent_index
+    position: absolute
+    z-index: 20
+    top: 186px
+    left: 260px
+    @media screen and ( max-width: 1024px)
+      left: 70px
+      top: 70px
+    @media screen and ( max-width: 768px)
+      left: 30px
+      top: 30px
+    @media screen and ( max-width: 425px)
+      width: 90%
+      left: 50%
+      transform: translateX(-50%)
+
+  .slideContentText_index
+    font-size: 70px
+    line-height: 80px
+    font-style: normal
+    font-weight: bold
+    color: #FFFFFF
+    @media screen and ( max-width: 768px)
+      font-size: 48px
+    @media screen and ( max-width: 425px)
+      font-size: 50px
+      line-height: 50px
+    @media screen and ( max-width: 375px)
+      font-size: 38px
+      
+      
+
+/* Стилизация слайдера
+/* Слайд
+
+.slick-slide
+  outline: none
+  position: relative
+
+/* Точки (булиты)
+
+.slider1_index .slick-dots
+  display: flex
+  align-items: center
+  justify-content: center
+  position: absolute
+  bottom: 124px
+  left: 270px
+  z-index: 100
+  @media screen and ( max-width: 1024px)
+    bottom: 70px
+    left: 50%
+    transform: translateX(-50%)
+  @media screen and ( max-width: 768px)
+    bottom: 30px
+
+  li
+    list-style: none
+    margin-right: 24px
+    display: inline-block
+
+    &:last-child
+      margin-right: 0px
+
+  button
+    font-size: 0px
+    width: 12px
+    height: 12px
+    display: inline-block
+    background-color: #FFFFFF
+    border-radius: 50%
+    border: none
+    outline: none
+    transform: scale(1)
+    transition: transform 0.7s ease-in-out, background-color 0.7s ease-in-out
+
+    &:hover
+      background-color: #EC8B33
+      transition: background-color 0.2s ease-in-out
+
+    &:active
+      background-color: #CA782E
+      transition: background-color 0.1s ease-in-out
+
+  li.slick-active button
+    transform: scale(2)
+    background-color: #EC8B33
+    transition: transform 0.7s ease-in-out, background-color 0.7s ease-in-out
+
+.meetCatalog_index
+  display: flex
+  align-items: center
+  transition: all 0.2s ease-in-out
+  text-decoration: none
+  padding-top: 31px
+  color: #ffffff
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  margin-left: 3px
+  @media screen and ( max-width: 375px)
+    display: block
+    text-align: center
+
+  &:hover
+    color: #EC8B33
+    transition: color 0.13s ease-in-out
+
+  &:focus
+    outline: none
+
+  .scrollDown
+    width: 40px
+    height: 40px
+    display: inline-block
+    transform: rotate(-90deg)
+    border-radius: 50%
+    outline: none
+    border: none
+    background-image: url('../img/svg/firstSection_page1/Button_arrow_down_default_page1.svg')
+    background-position: center
+    transition: background-image 0.2s ease-in-out
+    margin-left: 8px
+    @media screen and ( max-width: 320px)
+      transform: rotate(0deg)
+
+  &:hover > .scrollDown
+    background-image: url('../img/svg/firstSection_page1/Button_arrow_down_hover_page1.svg')
+    transition: color 0.2s ease-in-out
+
+  &:active > .scrollDown
+    background-image: url('../img/svg/firstSection_page1/Button_arrow_down_active_page1.svg')
+    transition: color 0.2s ease-in-out
+
+  &:focus > .scrollDown
+    outline: none
+
+/* Вторая секция. 1 страница. Главная
+
+.sectionTwo_index
+  width: 100%
+  display: block
+  overflow: hidden
+  padding-top: 118px
+  padding-bottom: 120px
+  @media screen and ( max-width: 1024px)
+    padding-top: 0px
+    padding-bottom: 60px
+  @media screen and ( max-width: 768px)
+    padding: 0px
+    padding-bottom: 40px
+    
+.secondSectionTabsContainer_index
+  display: flex
+  width: 100%
+  margin-bottom: 39px
+  @media screen and ( max-width: 1024px)
+    flex-direction: column
+    
+
+.sectionTwoText_index
+  display: block
+  width: 48.57%
+  @media screen and ( max-width: 1024px)
+    width: 100%
+
+/* Загловок каталога
+
+.sectionTitle_index
+  font-style: normal
+  font-weight: bold
+  font-size: 48px
+  line-height: 60px
+  color: #010101
+  display: block
+  width: 100%
+  @media screen and ( max-width: 1024px)
+    padding-top: 60px
+  @media screen and ( max-width: 768px)
+    padding-top: 40px
+  @media screen and ( max-width: 425px)
+    text-align: center
+  @media screen and ( max-width: 375px)
+    font-size: 38px
+  
+  .serificateName_certificates
+    font-weight: bold
+
+.white
+  color: #FFFFFF
+/* Текст каталога
+
+.secondSectionTabs_index
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-top: 47px
+  opacity: 0.6
+  @media screen and ( max-width: 768px)
+    margin-top: 20px   
+
+/* Фильтр первого слайдера
+
+.tabs_index
+  width: 48.57%
+  display: flex
+  align-items: flex-start
+  margin-left: 40px
+  padding-top: 110px
+  border-bottom: none
+  @media screen and ( max-width: 1024px)
+    width: 100%
+    margin-left: 0px
+    padding-top: 60px
+  @media screen and ( max-width: 768px)
+    padding-top: 40px
+  @media screen and ( max-width: 425px)
+    align-items: center
+    flex-direction: column
+
+.slider2_index
+  @media screen and ( max-width: 1024px)
+    padding-top: 20px
+  @media screen and ( max-width: 768px)
+    display: flex
+    flex-direction: column
+    padding-top: 0px
+    
+/* Вкладки первого фильтра
+
+.firstTabs_index
+  width: 47%
+  display: block
+  border: none
+  text-align: left
+  padding: 0px
+  padding-top: 15px
+  background-color: inherit
+  border-top: 2px solid #C3BDB9
+  margin-right: 40px
+  flex: 1
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  transition: all .2s ease-in-out
+  @media screen and ( max-width: 425px)
+    width: 50%
+    text-align: center
+    margin-right: 0px
+  @media screen and ( max-width: 375px)
+    width: 80%
+  @media screen and ( max-width: 375px)
+    width: 100%
+
+  &:last-of-type
+    margin-right: 0px
+    @media screen and ( max-width: 425px)
+      margin-top: 20px
+
+  &:hover
+    border-top: 2px solid #EC8B33
+    color: #EC8B33
+    transition: all .2s ease-in-out
+
+  &:focus
+    outline: none
+
+  &:active
+    border-top: 2px solid #CA782E
+    color: #CA782E
+    transition: all .2s ease-in-out
+
+/* Слайдер 2. 1 страница. Главная
+/* Панель управления слайдером
+
+.slider2ControlPanel_index
+  width: 86.5%
+  display: flex
+  align-items: center
+  padding-bottom: 40px
+  justify-content: space-between
+  padding-left: 262px
+  @media screen and ( max-width: 1400px)
+    padding-left: 70px
+  @media screen and ( max-width: 1024px)
+    padding-left: 40px
+  @media screen and ( max-width: 425px)
+    flex-direction: column-reverse
+    padding-left: 0px
+    width: 100%
+    
+.slider2Buttons_index
+  display: flex
+  align-items: center
+  margin-top: 20px
+  margin-right: 20px
+  @media screen and ( max-width: 320px)
+    margin-top: 30px
+
+.leftIndex
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  background-color: #010101
+  border: none
+  outline: none
+  background-image: url('../img/svg/firstSection_page1/leftArrow_page1.svg')
+  background-repeat: no-repeat
+  background-position: center
+  margin-right: 20px
+  transition: all .10s ease-in-out
+
+  &:hover
+    background-color: #EC8B33
+    transition: all .1s ease-in-out
+
+  &:focus
+    outline: none
+    border: none
+
+  &:active
+    background-color: #CA782E
+    transition: all .1s ease-in-out
+
+.rightIndex
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  background-color: #010101
+  border: none
+  outline: none
+  background-image: url('../img/svg/firstSection_page1/rightArrow_page1.svg')
+  background-repeat: no-repeat
+  background-position: center
+  transition: all .15s ease-in-out
+
+  &:hover
+    background-color: #EC8B33
+    transition: all .1s ease-in-out
+
+  &:focus
+    outline: none
+    border: none
+
+  &:active
+    background-color: #CA782E
+    transition: all .1s ease-in-out
+
+.slider2Counter_index
+  display: none
+
+.currentNumber_index, .totalNumber_index
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+  display: inline-block
+
+.slider2LinkShowAll_index
+  position: relative
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  padding-right: 28px
+  display: flex
+  align-items: center
+  text-decoration: none
+  transition: all .10s ease-in-out
+
+  .tabTitle_index
+    font-weight: bold
+    font-size: 16px
+    line-height: 28px
+    color: #010101
+    padding-left: 5px
+    transition: all .10s ease-in-out
+
+  @media screen and ( max-width: 320px)
+    text-align: center
+    padding-right: 0px
+    width: 90%
+
+  &:hover
+    color: #EC8B33
+    transition: all .10s ease-in-out
+    .tabTitle_index
+      color: #EC8B33
+      transition: all .10s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: all .10s ease-in-out
+    .tabTitle_index
+      color: #CA782E
+      transition: all .10s ease-in-out
+
+  &::after
+    content: ''
+    display: inline-block
+    position: absolute
+    right: 0px
+    width: 16px
+    height: 16px
+    background-image: url('../img/svg/firstSection_page1/Arrow_link_right_default_page1.svg')
+    background-repeat: no-repeat
+    background-position: center
+    @media screen and ( max-width: 320px)
+      right: 46%
+      bottom: -15px
+      transform: rotate(90deg)
+
+  &:hover::after
+    background-image: url('../img/svg/firstSection_page1/Arrow_link_right_hover_page1.svg')
+    transition: all .10s ease-in-out
+
+  &:active::after
+    background-image: url('../img/svg/firstSection_page1/Arrow_link_right_active_page1.svg')
+    transition: all .10s ease-in-out
+
+/* Контейнер слайдера. Для главной страницы
+
+.slider_catalog
+  padding-left: 260px
+  overflow: hidden
+  @media screen and ( max-width: 1400px)
+    padding-left: 70px
+  @media screen and ( max-width: 1024px)
+    padding: 0px 20px
+  @media screen and ( max-width: 425px)
+    padding: 0px 10px
+
+/* Контейнер контента. Для страницы каталога
+
+.content_catalog
+  padding-left: 0px
+
+/* Обёртка карточек
+
+.sliderContent_catalog
+  width: 100%
+  margin-bottom: 50px
+  display: flex
+  flex-wrap: wrap
+  align-items: stretch
+
+/* Карточки
+
+.s2_slide_catalog
+  padding: 10px
+  @media screen and ( max-width: 768px)
+    padding: 0px
+
+  &:last-of-type
+    margin-right: 0px
+
+.effect-ruby 
+  background-color: #17819c
+  position: relative
+  overflow: hidden
+  border-radius: 4px
+  text-align: center
+  cursor: pointer
+  height: 400px
+
+.effect-ruby 
+  img 
+    opacity: 0.7
+    transition: opacity 0.35s, transform 0.35s
+    transform: scale(1.15)
+    position: relative
+    display: block
+    opacity: 0.8
+    width: 100%
+    object-fit: cover
+    object-position: center
+    height: 100%
+
+.effect-ruby
+  figcaption
+    padding: 0em
+    color: #fff
+    text-transform: uppercase
+    font-size: 1.25em
+    backface-visibility: hidden
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 80%
+
+    &::before, &::after
+      pointer-events: none   
+
+.effect-ruby
+  &:hover > img 
+    opacity: 0.5
+    transform: scale(1)
+
+.effect-ruby 
+  h2 
+    margin-top: 20%
+    transition: transform 0.35s
+    transform: translate3d(0,20px,0)
+
+.effect-ruby 
+  p 
+    margin: 1em 0 0
+    padding: 3em
+    border: 1px solid #fff
+    opacity: 0
+    transition: opacity 0.35s, transform 0.35s
+    transform: translate3d(0,20px,0) scale(1.1)
+
+.effect-ruby:hover 
+  h2 
+    transform: translate3d(0,0,0)
+
+.effect-ruby:hover 
+  p 
+    opacity: 1
+    transform: translate3d(0,0,0) scale(1)
+
+.s2_slideText
+  text-decoration: none
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  display: block
+  padding-top: 25px
+  margin-bottom: 5px
+  transition: all .2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    transition: all .2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: all .1s ease-in-out
+
+.s2_slidePrice
+  color: #EC8B33
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  margin-bottom: 15px
+
+.showAll_catalog
+  width: 100%
+  text-decoration: none
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  text-align: center
+  color: #010101
+  padding: 10px
+  border: 2px solid #EC8B33
+  border-radius: 4px
+  position: relative
+  transition: all .2s ease-in-out
+  box-sizing: border-box
+  
+  &:hover
+    color: #EC8B33
+    border-color: #010101
+    transition: all .2s ease-in-out
+
+.showAllHover_catalog
+  
+  &::before
+    content: ''
+    width: 0%
+    height: 2px
+    position: absolute
+    top: 10%
+    left: 10%
+    background: #010101
+    transition: all 300ms ease
+
+  &::after
+    content: ''
+    width: 80%
+    height: 0px
+    position: absolute
+    top: 10%
+    left: 10%
+    background: #010101
+    transition: all 300ms ease
+    z-index: -1
+
+  &:hover
+    color: #EC8B33
+    border-color: #010101
+
+    &::before
+      content: ''
+      width: 80%
+      height: 2px
+      position: absolute
+      top: 10%
+      left: 10%
+      background: #010101
+      transition: all 300ms ease
+
+    &::after
+      content: ''
+      width: 80%
+      height: 80%
+      position: absolute
+      top: 10%
+      left: 10%
+      transition: all 300ms ease
+      transition-delay: 350ms
+  
+  &:active
+
+    &::before
+      opacity: 0
+      transition: all 300ms ease
+
+    &::after
+      opacity: 0
+      transition: all 300ms ease
+
+/* Третья секция. 1 страница. Главная
+
+.sectionThree_index
+  max-width: 100%
+  display: block
+  background-color: #685A51
+  padding-top: 118px
+  padding-bottom: 117px
+  @media screen and ( max-width: 1024px)
+    padding-top: 0px
+    padding-bottom: 60px
+  @media screen and ( max-width: 768px)
+    padding: 20px 0px
+  @media screen and ( max-width: 375px)
+    padding-top: 0px
+  
+.sectionThreeDignitys_index
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  width: 100%
+  margin-top: 65px
+  margin-bottom: 63px
+  @media screen and ( max-width: 768px)
+    margin: 40px 0px
+  @media screen and ( max-width: 425px)
+    margin: 20px 0px
+
+.sectionThreeDignity_index
+  display: block
+  width: 31.4%
+  margin-bottom: 42px
+  @media screen and ( max-width: 768px)
+    width: 100%
+    margin-bottom: 20px
+
+  &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(6)
+    margin-bottom: 0px
+    @media screen and ( max-width: 768px)
+      margin-bottom: 20px
+
+.dignityTitle_index
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  line-height: 36px
+  color: #EC8B33
+  display: block
+  margin-bottom: 18px
+
+.dignityText_index
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #FFFFFF
+  display: block
+
+.sectionThreeText_index
+  width: 66%
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 18px
+  line-height: 36px
+  color: rgba(255, 255, 255, 0.6)
+  @media screen and ( max-width: 1024px)
+    width: 100%
+    
+/* Четвертая секция. 1 страница. Главная
+
+.sectionFour_index
+  width: 100%
+  padding-top: 120px
+  padding-bottom: 120px
+  background-color: #EC8B33
+  @media screen and ( max-width: 1024px)
+    padding-top: 0px
+    padding-bottom: 60px
+  @media screen and ( max-width: 768px)
+    padding: 0px
+    padding-bottom: 40px
+
+/* Общие стили секции
+
+.costCalculator_index
+  position: relative
+  width: 100%
+  background-color: inherit
+
+
+/* Контейнер переключателя единиц измерения. 1 страница. Главная
+
+.switchMeasurement_index
+  width: 80px
+  height: 40px
+  display: flex
+  justify-content: space-between
+
+/* Плоскость 1
+
+.plane_index
+  margin-top: 49px
+  width: 100%
+  @media screen and ( max-width: 768px)
+    margin-top: 20px
+
+.plane_Title_index
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: rgba(255, 255, 255, 0.6)
+  padding-bottom: 23px
+  @media screen and ( max-width: 425px)
+    padding-bottom: 10px
+
+.plane_InputFields_index
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 768px)
+    flex-wrap: wrap
+
+.field_index
+  width: (320px * 100%) / 1400px
+  @media screen and ( max-width: 768px)
+    width: 45%
+    margin: 1% 1%
+  @media screen and ( max-width: 425px)
+    width: 100%
+
+  input
+    width: 100%
+    padding: 13px 0px 11px 20px
+    font-style: normal
+    font-weight: normal
+    font-size: 20px
+    line-height: 36px
+    border: none
+    border-radius: 4px
+
+    &:focus
+      outline: none
+
+  select
+    width: 100%
+    padding: 13px 20px 11px 20px
+    font-style: normal
+    font-weight: normal
+    font-size: 20px
+    line-height: 36px
+    border: none
+    border-radius: 4px
+    height: 60px
+
+/* Расчет формы/добавление новой
+
+.calcResult_index
+  width: (680px * 100%) / 1400px
+  margin: 0px auto
+  margin-top: 80px
+  @media screen and ( max-width: 768px)
+    margin-top: 20px
+
+  .totalCost_index
+    font-style: normal
+    font-weight: normal
+    font-size: 20px
+    line-height: 36px
+    color: #000000
+  
+  .totalCostValue_index
+    font-style: normal
+    font-weight: bold
+    font-size: 28px
+    line-height: 36px
+    color: #000000
+    margin-bottom: 18px
+
+  .totalSquare_index
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-bottom: 14px
+    margin-bottom: 40px
+    border-bottom: 2px solid #010101
+
+    .totalSquareTitle_index
+      font-style: normal
+      font-weight: normal
+      font-size: 16px
+      line-height: 28px
+      color: rgba(1, 1, 1, 0.6)
+    
+    .totalSquareValue_index
+      font-style: normal
+      font-weight: bold
+      font-size: 16px
+      line-height: 28px
+      color: #010101
+  
+  .requiredNumbers_index
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-bottom: 14px
+    margin-bottom: 40px
+    border-bottom: 2px solid #010101
+
+    .requiredNumbersTitle_index
+      font-style: normal
+      font-weight: normal
+      font-size: 16px
+      line-height: 28px
+      color: rgba(1, 1, 1, 0.6)
+    
+    .requiredNumbersValue_index
+      font-style: normal
+      font-weight: bold
+      font-size: 16px
+      line-height: 28px
+      color: #010101
+
+  .orderBtn_index
+    padding: 14px 60px
+    border: none
+    border-radius: 4px
+    color: #CA782E
+    outline: none
+    background-color: #010101
+
+.add_calculate_index
+  margin-top: 80px
+  width: 100%
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 768px)
+    margin-top: 20px
+  @media screen and ( max-width: 425px)
+    flex-direction: column
+
+.addButton_index
+  display: flex
+  justify-content: space-between
+  align-items: center
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+  @media screen and ( max-width: 320px)
+    flex-direction: column
+  
+  &:hover
+    > .addButtonText_index
+      color: #010101
+      transition: all .1s ease-in-out
+    
+    > .addNewPlane_index
+      background-color: #010101
+      transition: all .1s ease-in-out
+
+.addNewPlane_index
+  position: relative
+  width: 60px
+  height: 60px
+  position: relative
+  border-radius: 70%
+  background-color: #ffffff
+  border: none
+  outline: none
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  line-height: 36px
+  color: #EC8B33
+  margin-right: 20px
+  transition: all .1s ease-in-out
+  
+  &:active
+    background-color: #FFFFFF
+    transition: all .1s ease-in-out
+
+  &:focus
+    outline: none 
+
+.addButtonText_index
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: rgba(255, 255, 255, 0.6)
+  transition: all .1s ease-in-out
+
+.calculateIt_index
+  background-color: #EC8B33
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  text-align: center
+  color: #010101
+  z-index: 1
+  border: 2.5px solid #010101
+  border-radius: 4px
+  padding: 12px 60px
+  outline: none
+  text-transform: uppercase
+  position: relative
+  overflow: hidden
+  transition: all .2s ease-in-out
+  @media screen and ( max-width: 425px)
+    padding: 10px 30px
+    width: auto
+    margin: 0px auto
+
+  &:hover
+    color: #FFFFFF
+    border-color: #FFFFFF
+    transition: all .2s ease-in-out
+  
+  &:focus
+    outline: none
+
+/* Пятая секция. 1 страница. Главная
+
+.fifthSection_index
+  max-width: 1920px
+  position: relative
+  display: block
+  overflow: hidden
+  background-image: url('../img/jpg/fifthSection_page1/mapPage1.jpg')
+  background-repeat: no-repeat
+  background-position: right 0px
+  padding-bottom: 39px
+  @media screen and ( max-width: 1818px)
+    background-size: 50%
+  @media screen and ( max-width: 1400px)
+    background-image: none  
+  @media screen and ( max-width: 768px)
+    padding-bottom: 20px
+
+.sectionPadding
+  padding-top: 440px
+  @media screen and ( max-width: 1400px)
+    padding-top: 60px
+  @media screen and ( max-width: 768px)
+    padding-top: 40px
+    
+  
+.whoAreWeText
+  width: 48.57%
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-top: 49px
+  @media screen and ( max-width: 1400px)
+    width: 100%
+  @media screen and ( max-width: 768px)
+    margin-top: 20px
+
+/* Блок с кнопкой узнать больше
+
+.learnMoreBtn_index
+  width: 100%
+  display: block
+  background-image: url('../img/svg/learnMore_page1/inNumbers_page1.svg')
+  background-repeat: no-repeat
+  background-position: right 0px
+  @media screen and ( max-width: 1400px)
+    background-image: none
+    
+
+.learnMoreAboutUs_index
+  padding: 18px 60px
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  text-decoration: none
+  border: 2.5px solid #010101
+  border-radius: 4px
+  margin-bottom: 418px
+  overflow: hidden
+  transition: all .1s ease-in-out
+  @media screen and ( max-width: 1400px)
+    margin-bottom: 120px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 0px
+  @media screen and ( max-width: 768px)
+    margin-bottom: 0px
+  @media screen and ( max-width: 425px)
+    padding: 10px 30px
+    margin: 0px auto
+    width: auto
+  
+  &:hover
+    border-color: #EC8B33
+    color: #EC8B33
+    transition: all .1s ease-in-out
+
+  &:active
+    border-color: #CA782E
+    color: #CA782E    
+    transition: all .1s ease-in-out
+
+/* Отзывы клиентов
+
+.customerReviews_index
+  display: block
+  width: 100%
+
+.customersReviewsText_index
+  width: 48.57%
+  display: block
+  margin-right: 40px
+  margin-top: 59px
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  opacity: 0.6
+  flex: 1
+  @media screen and ( max-width: 1024px)
+    width: 100%
+    margin-top: 47px
+  @media screen and ( max-width: 768px)
+    margin-top: 20px
+
+/* Фильтр второго слайдера
+
+.secondTabsFilter_index
+  padding-top: 0px
+  @media screen and ( max-width: 1400px)
+    padding-top: 50px
+  @media screen and ( max-width: 1024px)
+    width: 100%
+    padding-top: 60px
+    margin-left: 0px
+  @media screen and ( max-width: 768px)
+    padding-top: 40px
+    margin-bottom: 40px
+    
+/* Вкладки второго фильтра
+
+.secondTabs_index
+  width: 47%
+  display: block
+  border: none
+  text-align: left
+  padding: 0px
+  padding-top: 15px
+  background-color: inherit
+  border-top: 2px solid #C3BDB9
+  margin-right: 40px
+  flex: 1
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  transition: all .2s ease-in-out
+  @media screen and ( max-width: 425px)
+    width: 50%
+    margin-right: 0px
+    text-align: center
+  @media screen and ( max-width: 375px)
+    width: 80%
+  @media screen and ( max-width: 320px)
+    width: 100%
+
+  &:last-of-type
+    margin-right: 0px
+    @media screen and ( max-width: 425px)
+      margin-top: 20px
+      
+
+  &:hover
+    border-top: 2px solid #EC8B33
+    color: #EC8B33
+    transition: all .2s ease-in-out
+
+  &:focus
+    outline: none
+
+.secondTabs_index_index:active
+  border-top: 2px solid #CA782E
+  color: #CA782E
+  transition: all .2s ease-in-out
+
+/* Грузовик
+
+.track_index
+  position: absolute
+  display: inline-block
+  left: -589px
+  right: 830.9px
+  top: -21px
+  transition: transform 1.5s ease-in-out
+  @media screen and ( max-width: 1400px)
+    display: none
+    
+
+.showTab_index
+  border-top: 2px solid #EC8B33
+  color: #EC8B33 !important
+  transition: all .10s ease-in-out
+
+/* Движение грузовика
+
+.trackMove_index
+  transform: translateX(1160px)
+  transition: transform 1.5s ease-in-out
+
+.customersReviewsTabs_index
+  padding-top: 27px
+  padding-bottom: 124px
+  @media screen and ( max-width: 1024px)
+    padding-bottom: 60px
+  @media screen and ( max-width: 768px)
+    padding: 40px 0px
+
+/* Слайдер 3. Главная
+/* Панель управления третьим слайдером
+
+.slider3_index
+  width: 100%
+  padding-left: 255px
+  @media screen and ( max-width: 1400px)
+    padding-left: 70px
+  @media screen and ( max-width: 1024px)
+    padding-top: 20px
+    padding-left: 40px
+  @media screen and ( max-width: 768px)
+    padding-top: 0px
+    padding-left: 20px
+  @media screen and ( max-width:  700px)
+    padding-left: 0px
+    
+/* Панель управления третьим слайдером
+
+.slider3ControlPanel_index
+  width: 84%
+  height: 60px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 36px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 768px)
+    padding-left: 20px
+  @media screen and ( max-width: 425px)
+    flex-direction: column-reverse
+
+/* Кнопки + счетчик
+
+.slider3Buttons_index
+  display: flex
+  white-space: nowrap
+  align-items: center
+  @media screen and ( max-width: 425px)
+    margin-top: 20px
+
+/* Кнопка влево
+
+.s3_left2Index
+  height: 60px
+  width: 60px
+  display: inline-block
+  margin-right: 20px
+  border: none
+  border-radius: 50%
+  outline: none
+  background-image: url('../img/svg/firstSection_page1/Slider_button_left_default_page1.svg')
+  transition: opacity 0.2s ease-in-out, background-image 0.2s ease-in-out
+
+  &:focus
+    outline: none
+
+  &:hover
+    background-image: url('../img/svg/firstSection_page1/Slider_button_left_hover_page1.svg')
+    transition: background-image 0.2s ease-in-out
+
+  &:active
+    background-image: url('../img/svg/firstSection_page1/Slider_button_left_active_page1.svg')
+    transition: background-image 0.1s ease-in-out
+
+/* Кнопка вправо
+
+.s3_right2Index
+  height: 60px
+  width: 60px
+  display: inline-block
+  margin-right: 25px
+  border: none
+  border-radius: 50%
+  outline: none
+  background-image: url('../img/svg/firstSection_page1/Slider_button_right_default_page1.svg')
+  transition: background-image 0.2s ease-in-out, opacity 0.2s ease-in-out
+  @media screen and ( max-width: 425px)
+    margin-right: 0px
+
+  &:focus
+    outline: none
+
+  &:hover
+    background-image: url('../img/svg/firstSection_page1/Slider_button_right_hover_page1.svg')
+    transition: background-image 0.2s ease-in-out, opacity 0.2s ease-in-out
+
+  &:active
+    background-image: url('../img/svg/firstSection_page1/Slider_button_right_active_page1.svg')
+    transition: background-image 0.1s ease-in-out, opacity 0.2s ease-in-out
+
+.slider3_index .slick-arrow.slick-disabled
+  opacity: 0.2
+  transition: opacity 0.2s ease-in-out
+
+/* Ссылка на просмотр всех отзывов
+
+.slider3LinkShowAll_index
+  width: 195px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  text-decoration: none
+  transition: color 0.2s ease-in-out, background-image 0.2s ease-in-out
+
+  .slider3LinkText_index
+    display: inline-block
+    width: 163px
+    height: 28px
+    font-style: normal
+    font-weight: bold
+    font-size: 16px
+    line-height: 28px
+    color: #010101
+    transition: color 0.2s ease-in-out
+
+  &:hover .slider3LinkText_index
+    color: #EC8B33
+    transition: color 0.2s ease-in-out
+
+  &:active .slider3LinkText_index
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+  .slider3LinkArrow_index
+    display: inline-block
+    width: 20px
+    height: 20px
+    background-image: url('../img/svg/fifthSection_page1/All_reviews_icon_default_page1.svg')
+    transition: background-image 0.2s ease-in-out
+
+  &:hover .slider3LinkArrow_index
+    background-image: url('../img/svg/fifthSection_page1/All_reviews_icon_hover_page1.svg')
+    transition: background-image 0.2s ease-in-out
+
+  &:active .slider3LinkArrow_index
+    background-image: url('../img/svg/fifthSection_page1/All_reviews_icon_active_page1.svg')
+    transition: background-image 0.1s ease-in-out
+
+/* Слайды
+
+.slider3Content_index
+  width: 100%
+
+/* Общие стили для слайдов
+
+.s3_slide_index
+  cursor: pointer
+  outline: none
+  border: none
+  position: relative
+  @media screen and ( max-width: 700px)
+    width: 80%
+
+  &:last-child
+    margin-right: 0px
+
+/* Общие стили для обертки содержимого
+
+.s3_slide1Review_index
+  background-color: #F0EFEE
+  padding: 38px 20px 20px 40px
+  margin-bottom: 40px
+  border-radius: 4px
+  @media screen and ( max-width: 699px)
+    padding: 38px 15px 20px 15px
+
+/* Достоинства
+
+.s3_slide1PositiveComment
+  margin-bottom: 20px
+
+.s3_slide1PositiveReview_index
+  display: flex
+  align-items: center
+  height: 36px
+  margin-bottom: 8px
+
+.s3_plusIcon_index
+  height: 28px
+  width: 32px
+  margin-right: 12px
+  background-image: url('../img/svg/fifthSection_page1/Plus_icon_slider3_page1.svg')
+  background-position: center
+  background-repeat: no-repeat
+
+.s3_slide1PositiveReview_index .s3_positiveText_index
+  text-align: left
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #4E4E4E
+
+.s3_positiveText_index
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+
+/* Недостатки
+
+.s3_slide1NegativeComment
+  margin-bottom: 19px
+
+.s3_slide1NegativeReview_index
+  display: flex
+  align-items: center
+  height: 36px
+  margin-bottom: 8px
+
+.s3_minusIcon_index
+  display: inline-block
+  height: 28px
+  width: 32px
+  margin-right: 12px
+  background-image: url('../img/svg/fifthSection_page1/Minus_icon_slider3_page1.svg')
+  background-position: center
+  background-repeat: no-repeat
+
+.s3_slide1NegativeReview_index .s3_negativeText_index
+  display: inline-block
+  text-align: left
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #4E4E4E
+
+.s3_negativeText_index
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+
+/* Текст отзыва
+
+.s3_reviewCommentText1_index
+  display: inline-block
+  text-align: left
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #4E4E4E
+  margin-bottom: 8px
+
+.s3_reviewCommentText2_index
+  width: 100%
+  display: inline-block
+  text-align: left
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  text-align: left
+  overflow-y: scroll
+  text-overflow: ellipsis
+
+/* Кто оставил отзыв
+
+.s3_slide1WhoWrote_index
+  display: flex
+  justify-content: space-around
+  @media screen and ( max-width: 820px)
+    flex-wrap: wrap
+
+/* ФИО + аватарка
+
+.s3_slide1Person_index
+  flex: 1 1 50%
+  display: flex
+  align-items: center
+  @media screen and ( max-width: 820px)
+    flex-basis: 100%
+    justify-content: center
+  @media screen and ( max-width: 699px)
+    flex-basis: 50%
+  @media screen and ( max-width: 444px)
+    flex-basis: 100%
+
+/* Аватарка
+
+.s3_slide1Avatar_index
+  height: 60px
+  width: 60px
+  display: block
+  border-radius: 50%
+  margin-right: 20px
+
+  img
+    border-radius: 50%
+
+/* ФИО
+
+.s3_slide1PersonData_index
+  width: auto
+  @media screen and ( max-width: 820px)
+    display: flex
+    flex-direction: column
+
+.s3_slide1Name_index
+  display: inline-block
+  text-align: left
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+
+.s3_slide1Who_index
+  display: inline-block
+  text-align: left
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+
+/* Вложения и ссылки
+
+.s3_slide1ReviewLinks_index
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: flex-end
+  flex: 1 1 50%
+  @media screen and ( max-width: 820px)
+    flex-basis: 100%
+    align-items: center
+    margin-top: 10px
+  @media screen and ( max-width: 699px)
+    flex-basis: 50%
+    margin-top: 0px
+  @media screen and ( max-width: 444px)
+    flex-basis: 100%
+    margin-top: 10px
+
+/* Вложения
+
+.s3_slide1Attachment_index
+  width: 119px
+  height: 28px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  text-decoration: none
+  margin-top: 1px
+  outline: none
+
+.s3_slide1AttachmentIcon_index
+  display: inline-block
+  width: 20px
+  height: 20px
+  background-image: url('../img/svg/fifthSection_page1/Attachment_icon_default_page1.svg')
+  transition: background-image 0.2s ease-in-out
+
+.s3_slide1Attachment_index
+  &:hover .s3_slide1AttachmentIcon_index
+    background-image: url('../img/svg/fifthSection_page1/Attachment_icon_hover_page1.svg')
+    transition: background-image 0.2s ease-in-out
+
+  &:active .s3_slide1AttachmentIcon_index
+    background-image: url('../img/svg/fifthSection_page1/Attachment_icon_active_page1.svg')
+    transition: background-image 0.1s ease-in-out
+
+.s3_slide1AttachmentText_index
+  display: inline-block
+  width: 87px
+  height: 28px
+  color: #010101
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  text-align: center
+  transition: color 0.2s ease-in-out
+
+.s3_slide1Attachment_index
+  &:hover .s3_slide1AttachmentText_index
+    color: #EC8B33
+    transition: color 0.2s ease-in-out
+
+  &:active .s3_slide1AttachmentText_index
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+/* Ссылка на читать полностью
+
+.s3_slide1ReviewLink_index
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 169px
+  height: 28px
+  margin-bottom: 9px
+  outline: none
+
+.s3_slide1ReviewLinkIcon_index
+  display: inline-block
+  width: 20px
+  height: 20px
+  background-image: url('../img/svg/fifthSection_page1/Read_icon_default_page1.svg')
+  margin-left: 6px
+  transition: background-image 0.2s ease-in-out
+
+.s3_slide1ReviewLink_index
+  &:hover .s3_slide1ReviewLinkIcon_index
+    background-image: url('../img/svg/fifthSection_page1/Read_icon_hover_page1.svg')
+    transition: background-image 0.2s ease-in-out
+
+  &:active .s3_slide1ReviewLinkIcon_index
+    background-image: url('../img/svg/fifthSection_page1/Read_icon_active_page1.svg')
+    transition: background-image 0.1s ease-in-out
+
+.s3_slide1ReviewLinkText_index
+  display: inline-block
+  width: 137px
+  height: 28px
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  margin-right: -6px
+  text-decoration: underline
+  transition: color 0.2s ease-in-out
+
+.s3_slide1ReviewLink_index
+  &:hover .s3_slide1ReviewLinkText_index
+    color: #EC8B33
+    transition: color 0.2s ease-in-out
+
+  &:active .s3_slide1ReviewLinkText_index
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+/* Шестая секция. 1 страница. Главная
+
+.sixthSection_index
+  width: 100%
+  display: block
+  background-size: contain
+  height: 500px
+  @media screen and ( max-width: 1024px)
+    height: 430px  
+  @media screen and ( max-width: 425px)
+    height: 450px
+  @media screen and ( max-width: 375px)
+    height: 600px
+
+.parallax-window
+  height: 100%
+  background: transparent
+
+.manufacturer_index
+  width: 73.1%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  padding-top: 50px
+  margin: 0px auto
+  @media screen and ( max-width: 1024px)
+    width: 100%
+  @media screen and ( max-width: 768px)
+    padding-top: 0px
+
+.centerTitle
+  text-align: center
+
+.manufacturerLogo_index
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  margin-bottom: 82px
+  margin-top: 80px
+  @media screen and ( max-width: 1024px)
+    margin: 40px 0px
+  @media screen and ( max-width: 768px)
+    margin: 10px 0px
+    flex-wrap: wrap
+  @media screen and ( max-width: 375px)
+    margin-bottom: 20px
+
+.manufacturerLink_index
+  display: block
+  transition: all .2s ease-in-out
+  @media screen and ( max-width: 768px)
+    width: 40%
+    text-align: center
+    margin: 3% 0%
+  @media screen and ( max-width: 375px)
+    width: 100%
+
+  &:hover
+    transform: scale(1.2)
+    transition: all .2s ease-in-out
+
+.buttonМanufacturer_index
+  display: block
+  padding: 14px 60px
+  text-align: center
+  border-radius: 4px
+  vertical-align: center
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  background-color: #EC8B33
+  text-transform: uppercase
+  border: none
+  z-index: 1
+  outline: none
+  transition: all .25s ease-in-out
+  @media screen and ( max-width: 425px)
+    padding: 10px 30px
+  @media screen and ( max-width: 375px)
+    padding: 10px 10px
+  
+  &:hover
+    background-color: #010101
+    color: #EC8B33
+    transition: all .1s ease-in-out
+  &:active
+    color: #CA782E
+    transition: all .1s ease-in-out
+
+  &:focus
+    outline: none
+
+/* Седбьмая секция. 1 страница. Главная
+
+.seventhSection_index
+  max-width: 100%
+  padding-top: 160px
+  padding-bottom: 120px
+  background-color: #ffffff
+  border-bottom: 2px solid #F0EFEE
+  display: block
+  @media screen and ( max-width: 1024px)
+    padding: 60px 0px
+    padding-top: 0px
+  @media screen and ( max-width: 768px)
+    padding: 0px
+    padding-bottom: 40px
+
+.ourGroup_index
+  position: relative
+  width: 100%
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 1440px)
+    flex-direction: column
+
+.allAboutGroup_index
+  position: relative
+  width: 23%
+  margin-top: 22px
+  margin-bottom: 40px
+  @media screen and ( max-width: 1440px)
+    width: 100%
+  @media screen and ( max-width: 1024px)
+    width: 100%
+    margin-top: 0px
+    margin-bottom: 47px
+  @media screen and ( max-width: 768px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 425px)
+    margin-bottom: 0px
+
+.groupText_index
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 34px
+  color: #000000
+  margin-top: 47px
+  margin-bottom: 39px
+  @media screen and ( max-width: 768px)
+    margin: 20px 0px
+
+.groupLink_index
+  display: block
+  width: 100%
+  border-radius: 4px
+  border: 2.5px solid #010101
+  text-align: center
+  padding: 14px 60px
+  color: #010101
+  text-decoration: none
+  z-index: 1
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  transition: all .1s ease-in-out
+  @media screen and ( max-width: 1440px)
+    width: 320px
+  @media screen and ( max-width: 1024px)
+    width: 300px
+  @media screen and ( max-width: 425px)
+    width: 70%
+    padding: 10px 30px
+    margin: 0px auto
+
+  &:hover
+    border-color: #EC8B33
+    color: #EC8B33
+    transition: all .1s ease-in-out
+  
+  &:active
+    border-color: #CA782E
+    color: #CA782E
+    transition: all .1s ease-in-out
+
+.linksVK_index
+  width: 74.28%
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 1440px)
+    width: 100%
+  @media screen and ( max-width: 1024px)
+    width: 100%
+  @media screen and ( max-width: 425px)
+    display: none
+  
+/* Первый пост vk
+
+.effect-milo 
+  height: 100%
+  background: #2e5d5a
+  position: relative
+  overflow: hidden
+  width: 30.76%
+  min-height: 420px
+  border-radius: 4px
+  cursor: pointer
+  @media screen and ( max-width: 768px)
+    min-height: 300px
+
+  .miloIcon_index
+    position: absolute
+    bottom: 20px
+    right: 20px
+    width: 60px
+    height: 60px
+    transition: all .2s ease-in-out
+    background-size: 100%
+    background-image: url('../img/svg/seventhSection_page1/articleIconStatic.svg')
+    z-index: 1
+    
+  &:hover
+    .miloIcon_index
+      background-image: url('../img/svg/seventhSection_page1/articleIconHover.svg')
+      transition: all .2s ease-in-out
+  
+  &:active
+    .miloIcon_index
+      background-image: url('../img/svg/seventhSection_page1/articleIconActive.svg')
+      transition: all .1s ease-in-out
+  
+
+  img 
+    max-width: none
+    width: calc(100% + 60px)
+    height: 100%
+    opacity: 1
+    transition: opacity 0.35s, transform 0.35s
+    transform: translate3d(-30px,0,0) scale(1.12)
+    backface-visibility: hidden
+    position: absolute
+
+  &:hover
+    img
+      opacity: 0.5
+      transform: translate3d(0,0,0) scale(1)
+
+  figcaption
+    position: absolute
+    width: 70%
+    left: 50%
+    top: 30%
+    transform: translate(-50%, -30%)
+
+    p 
+      padding: 0 10px 0 0
+      border-right: 1px solid #fff
+      text-align: right
+      color: #FFFFFF
+      opacity: 0
+      transition: opacity 0.35s, transform 0.35s
+      transform: translate3d(-40px,0,0)
+      z-index: 1
+
+      .vkGroupTitle_index
+        font-size: 1.2em
+        font-family: 'Raleway'
+        font-weight: bold
+  
+  &:hover 
+    p
+      opacity: 1
+      transform: translate3d(0,0,0)
+
+/* Шаблон бизнес-информации
+
+.buisnessInformation
+  width: 100%
+  padding-top: 120px
+  padding-bottom: 120px
+  @media screen and ( max-width: 1024px)
+    padding: 60px 0px
+  @media screen and ( max-width: 768px)
+    padding: 40px 0px
+
+.buisnessInformationBlock
+  width: 100%
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 1024px)
+    flex-direction: column
+
+.buisnessBlockInf
+  width: 31.4%
+  border: 2px solid #F0EFEE
+  padding-left: 40px
+  padding-right: 40px
+  padding-bottom: 40px
+  @media screen and ( max-width: 1024px)
+    width: 100%
+    margin-bottom: 47px
+  @media screen and ( max-width: 768px)
+    margin-bottom: 20px
+    padding: 0px 20px 20px 20px
+  &:last-of-type
+    @media screen and ( max-width: 1024px)
+      margin-bottom: 0px
+
+.buisnessBlockIcon
+  display: block
+  margin: 0px auto
+  margin-top: 38px
+  height: 80px
+  width: 80px
+  @media screen and ( max-width: 768px)
+    margin-top: 20px
+
+.buisnessBlockHeadline
+  margin: 0px auto
+  margin-top: 41px
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  text-align: center
+  color: #EC8B33
+  @media screen and ( max-width: 1024px)
+    margin-top: 20px
+  @media screen and ( max-width: 425px)
+    margin-top: 10px
+
+.buisnessBlcokText
+  margin: 0px auto
+  margin-top: 21px
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  text-align: center
+  @media screen and ( max-width: 425px)
+    margin-top: 10px
+
+.icon_index
+  margin: 0px auto
+  margin-top: 38px
+  height: 80px
+  width: 80px
+
+.link1_index, .link2_index, .link3_index
+  color: #EC8B33
+  text-decoration: underline
+  transition: color 0.1s ease-in-out
+
+  &:hover
+    color: #010101
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+/* Обратная связь. 1 страница. Главная
+
+.feedback
+  width: 100%
+  padding-top: 52px
+  padding-bottom: 48px
+  background-color: #EC8B33
+  @media screen and ( max-width: 1024px)
+    padding: 40px 0px
+  @media screen and ( max-width: 768px)
+    padding: 20px 0px
+
+.feedbackInterface
+  width: 100%
+  display: flex
+  align-items: center
+  @media screen and ( max-width: 1024px)
+    flex-wrap: wrap
+    justify-content: space-between
+  @media screen and ( max-width: 768px)
+    flex-direction: column
+
+.message
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-right: 40px
+  @media screen and ( max-width: 1024px)
+    width: 50%
+    margin-right: 0px
+  @media screen and ( max-width: 768px)
+    text-align: center
+    margin-right: 0px
+    width: 100%
+    margin-bottom: 10px
+
+.phoneNumber
+  display: flex
+  width: 320px
+  height: 60px
+  position: relative
+  margin-right: 40px
+  @media screen and ( max-width: 1024px)
+    margin-right: 0px
+  @media screen and ( max-width: 375px)
+    width: 100%
+
+.placeholder
+  position: absolute
+  top: 13px
+  left: 20px
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #4E4E4E
+  cursor: default
+  transform-origin: top left
+  transition: all 0.2s ease-in-out
+
+#phone
+  width: 260px
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  padding-left: 20px
+  padding-top: 28px
+  vertical-align: middle
+  border: none
+  outline: none
+  border-radius: 4px 0px 0px 4px
+
+  &:hover
+    border-right: none
+    border-left: 2px solid #F5BF8F
+    border-top: 2px solid #F5BF8F
+    border-bottom: 2px solid #F5BF8F
+    background-color: #F0EFEE
+
+.submitNumber
+  width: 60px
+  height: 60px
+  background-image: url("../img/svg/footer_page1/buttonNumber_default_page1.svg")
+  border: none
+  border-radius: 0px 4px 4px 0px
+  outline: none
+  transition: background-image 0.2s ease-in-out
+
+  &:hover
+    background-image: url('../img/svg/footer_page1/buttonNumber_hover_page1.svg')
+    transition: background-image 0.2s ease-in-out
+
+  &:active
+    background-image: url('../img/svg/footer_page1/buttonNumber_active_page1.svg')
+    transition: background-image 0.1s ease-in-out
+
+.move
+  transform: translateY(-10px) scale(0.8)
+  transition: all 0.2s ease-in-out
+  transform-origin: top left
+
+.FYI
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  align-items: center
+  color: #ffffff
+  opacity: 0.6
+  @media screen and ( max-width: 1024px)
+    width: 100%
+    padding-top: 20px
+    text-align: center
+  @media screen and ( max-width: 768px)
+    padding-top: 10px
+  
+  & br
+    @media screen and ( max-width: 1024px)
+      display: none
+
+  .politic, .usersAgreement
+    color: #ffffff
+    font-size: 16px
+    line-height: 28px
+
+/* Первая секция. 11 страница. Отзывы
+
+.sectionOne_page11
+  width: 100%
+  border-bottom: 2px solid #F0EFEE
+
+  .wrapper .firstSection_page11
+    position: relative
+    width: inherit
+    min-height: 1176px
+    display: flex
+    flex-direction: column
+
+/* Вторая секция. 11 секция. Отзывы
+
+.sectionTwo_page11
+  width: 100%
+  height: 850px
+  padding-top: 120px
+
+  .wrapper .manufacturer
+    width: 100%
+    height: 610px
+    display: flex
+    justify-content: space-between
+
+    .internetShowcase
+      width: 440px
+      height: 610px
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      border: 2px solid #F0EFEE
+      align-items: center
+      padding-top: 38px
+
+      .internetShowcaseIcon
+        width: 80px
+        height: 80px
+        margin-bottom: 41px
+
+      .internetShowcaseText1
+        width: 360px
+        height: 107px
+        font-style: normal
+        font-weight: bold
+        font-size: 20px
+        line-height: 36px
+        text-align: center
+        color: #EC8B33
+        margin-bottom: 21px
+
+      .internetShowcaseText2
+        width: 360px
+        height: 283px
+        text-align: center
+        font-style: normal
+        font-weight: normal
+        font-size: 20px
+        line-height: 32px
+        letter-spacing: -0.5px
+        color: #010101
+
+        .showCaseLink
+          color: #EC8B33
+          transition: color 0.2s ease-in-out
+
+          &:hover
+            color: #010101
+            transition: color 0.2s ease-in-out
+
+          &:active
+            color: #CA782E
+            transition: color 0.1s ease-in-out
+
+    .sertification
+      width: 440px
+      height: 610px
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      border: 2px solid #F0EFEE
+      align-items: center
+      padding-top: 38px
+
+      .sertificationIcon
+        width: 80px
+        height: 80px
+        margin-bottom: 41px
+
+      .sertificationText1
+        width: 360px
+        height: 107px
+        font-style: normal
+        font-weight: bold
+        font-size: 20px
+        line-height: 36px
+        color: #EC8B33
+        text-align: center
+        margin-bottom: 21px
+
+      .sertificationText2
+        width: 360px
+        height: 283px
+        text-align: center
+        font-style: normal
+        font-weight: normal
+        font-size: 20px
+        line-height: 32px
+        letter-spacing: -0.5px
+        color: #010101
+
+        .sertificationLink
+          color: #EC8B33
+          transition: color 0.2s ease-in-out
+
+          &:hover
+            color: #010101
+            transition: color 0.2s ease-in-out
+
+          &:active
+            color: #CA782E
+            transition: color 0.1s ease-in-out
+
+    .delivery
+      width: 440px
+      height: 610px
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      border: 2px solid #F0EFEE
+      align-items: center
+      padding-top: 38px
+
+      .deliveryIcon
+        width: 80px
+        height: 80px
+        margin-bottom: 41px
+
+      .deliveryText1
+        width: 360px
+        height: 107px
+        font-style: normal
+        font-weight: bold
+        font-size: 20px
+        line-height: 36px
+        color: #EC8B33
+        text-align: center
+        margin-bottom: 21px
+
+      .deliveryText2
+        width: 360px
+        height: 283px
+        text-align: center
+        font-style: normal
+        font-weight: normal
+        font-size: 20px
+        line-height: 32px
+        letter-spacing: -0.5px
+        color: #010101
+
+        .deliveryLink
+          color: #EC8B33
+          transition: color 0.2s ease-in-out
+
+          &:hover
+            color: #010101
+            transition: color 0.2s ease-in-out
+
+          &:active
+            color: #CA782E
+            transition: color 0.1s ease-in-out
+
+/* ВТОРАЯ СТРАНИЦА. OSB НА ПОЛ
+/* Первая секция. 2 страница. OSB на пол
+
+.sectionOne_osbOnFloor
+  width: 100%
+  display: block
+  padding-top: 28px
+
+/* Слайдер. 2 страница. OSB на пол
+
+.container_osbOnFloor
+  position: relative
+  width: 100%
+  
+/* Кнопки управления
+/* Левая
+
+.controls_osbOnFloor
+  position: absolute
+  width: 60px
+  height: 60px
+  top: 32%
+  transform: translatex(0%, -50%)
+  display: block
+  cursor: pointer
+  border-radius: 50%
+  border: none
+  outline: none
+  text-align: center
+  padding-top: 5px
+  z-index: 2
+  background-color: #010101
+  transition: background-color 0.2s ease-in-out
+.slick-arrow
+  @media screen and ( max-width: 425px)
+    visibility: hidden
+
+#previous_osbOnFloor
+  left: -30px
+  @media screen and ( max-width: 605px)
+    left: -10px
+
+  &:hover
+    background-color: #EC8B33
+    transition: background-color 0.2s ease-in-out
+
+  &:active
+    background-color: #CA782E
+    transition: background-color 0.1s ease-in-out
+
+/* Правая
+
+#next_osbOnFloor
+  right: -30px
+  @media screen and ( max-width: 605px)
+    right: -10px
+
+  &:hover
+    background-color: #EC8B33
+    transition: background-color 0.2s ease-in-out
+
+  &:active
+    background-color: #CA782E
+    transition: background-color 0.1s ease-in-out
+
+/* Стилизация слайдера. 2 страница. OSB на пол
+
+.slider_osbOnFloor
+  width: 100%
+  height: 220px
+  margin-bottom: 28px
+  position: relative
+
+  .slick-list
+    overflow: hidden
+    height: 100%
+
+  .slick-track
+    display: flex
+
+  .slick-slide
+    z-index: 2
+    outline: none
+    height: 100%
+
+    img
+      height: 100%
+      object-fit: cover
+  
+  .slick-dots
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 72px
+    height: 12px
+    position: absolute
+    z-index: 4
+    bottom: 16px
+    left: 50%
+    transform: translate(-50%, -50%)
+    border: none
+    padding: 0px
+    @media screen and ( max-width: 717px)
+      bottom: 3px
+
+    li
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 12px
+      width: 12px
+      list-style: none
+      border: none
+
+      &.slick-active button
+        background-color: #FFFFFF
+
+      button
+        display: inline-block
+        font-size: 0px
+        width: 12px
+        height: 12px
+        background-image: url('../img/svg/firstSection_page2/slider_page2/dotSlider_page2.svg')
+        background-color: transparent
+        outline: none
+        border: none
+        border-radius: 50%
+        transform: scale(1)
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out
+
+        &:hover
+          background-color: #FFFFFF
+          transform: scale(1.1)
+          transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out
+
+        &:active
+          background-color: #FFFFFF
+          transform: scale(1.2)
+          transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out
+
+/* Реклама слайдера. 2 страница. OSB на пол
+/* Общие стили слайдов
+
+.slideBunnerName_osbOnFloor
+  position: absolute
+  top: 43px
+  left: 120px
+  z-index: 4
+  width: 338px
+  height: 36px
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  line-height: 36px
+  color: #010101
+  white-space: nowrap
+  @media screen and ( max-width: 605px)
+    left: 70px
+  @media screen and ( max-width: 425px)
+    top: 30px
+    left: 20px
+    font-size: 20px
+    width: 90%
+
+.slideBunnerDiscount_osbOnFloor
+  position: absolute
+  top: 88px
+  left: 0px
+  z-index: 4
+  width: 560px
+  height: 44px
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  line-height: 36px
+  padding-top: 2px
+  padding-left: 120px
+  color: #010101
+  background-color: #F2AE71
+  border-radius: 0px 4px 4px 0px
+  @media screen and ( max-width: 605px)
+    padding-left: 70px
+  @media screen and ( max-width: 425px)
+    width: 90%
+    top: 70px
+    padding-left: 20px
+    font-size: 14px
+    
+
+.slideBtn_osbOnFloor
+  position: absolute
+  top: 148.03px
+  left: 120px
+  z-index: 4
+  width: 200px
+  height: 44px
+  background-color: #EC8B33
+  border-radius: 4px
+  text-align: center
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  padding-top: 2px
+  border: none
+  outline: none
+  color: #010101
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out
+  @media screen and ( max-width: 605px)
+    left: 70px
+  @media screen and ( max-width: 425px)
+    top: 130px
+    left: 20px
+
+  &:hover
+    color: #EC8B33
+    background-color: #010101
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    background-color: #010101
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out
+
+/* Вторая секция. 2 страница. OSB на пол
+
+.sectionTwo_osbOnFloor
+  width: 100%
+
+.secondSection_osbOnFloor
+  width: 100%
+  display: block
+
+/* Класс для страницы catalog
+
+.filterSection_catalog
+  padding-top: 50px
+
+/* Контент второй секции. 2 страница. OSB на пол
+/* Хлебные крошки
+
+.breadcrumbsOSB
+  display: flex
+  margin: 40px 0px
+  @media screen and ( max-width: 441px)
+    margin: 0px auto
+    margin-top: 20px
+    margin-bottom: 40px
+    flex-wrap: wrap
+    justify-content: space-between
+
+.breadcrumbOSB
+  background-color: #F0EFEE
+  position: relative
+  padding: 6px 20px
+
+  &:not(:last-of-type)
+    margin-right: 12px
+
+  &:not(:last-of-type)::after
+    content: ""
+    width: 7px
+    height: 12px
+    position: absolute
+    background-image: url('../img/svg/secondSection_page2/arrowLink_page2.svg')
+    right: 15px
+    top: 50%
+    transform: translateY(-50%)
+
+  @media screen and ( max-width: 441px)
+    text-align: center
+    flex: 1 1 40%
+    margin-top: 20px
+    &:nth-of-type(2)
+      margin-right: 0px
+    &:last-of-type
+      margin: 0px auto
+      margin-top: 20px
+
+  a
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100%
+    text-decoration: none
+    color: #4E4E4E
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 28px
+    padding-right: 10px
+
+  &:last-of-type
+    background-color: #F0EFEE
+    padding: 6px 20px
+
+    a
+      display: block
+      height: 100%
+      text-decoration: none
+      color: #999999
+      font-style: normal
+      font-weight: normal
+      font-size: 16px
+      line-height: 28px
+
+/* Крайняя ссылка
+
+/* Меню второй секции
+
+.secondSectionMenu_osbOnFloor
+  display: flex
+  width: 100%
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 49px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+
+  @media screen and ( max-width: 619px)
+    flex-direction: column
+
+.collapseFilter_osbOnFloor
+  text-align: center
+  margin-bottom: 5px
+  display: none
+  @media screen and ( max-width: 1000px)
+    display: block
+
+  .collapseFilterBtn_osbOnFloor
+    border-radius: 4px
+    padding: 12px 60px
+    background-color: #010101
+    border: none
+    color: #EC8B33
+    transition: all .2s ease-in-out
+
+    &:hover
+      background-color: #EC8B33
+      color: #010101
+      transition: all .2s ease-in-out
+
+    &:active
+      background-color: #CA782E
+      transition: all .2s ease-in-out
+
+    &:focus
+      box-shadow: none
+
+.filterCollapse_osbOnFloor
+  .card
+    border: none
+
+    .secondSectionOptions_osbOnFloor
+      display: block
+      width: 80%
+      margin: 0px auto
+      text-align: center
+      @media screen and ( max-width: 768px)
+        width: 100%
+
+.secondSestionHeadline_osbOnFloor
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  line-height: 36px
+  color: #010101
+  width: 232px
+  white-space: nowrap
+  @media screen and ( max-width: 619px)
+    margin-bottom: 10px
+
+.DropDownList_osbOnFloor
+  width: 348px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  @media screen and ( max-width: 375px)
+    flex-direction: column
+
+.dropDownListText_osbOnFloor
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+
+#DropDownList_osbOnFloor
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  outline: none
+  border: none
+
+/* Контент второй секции. 2 страница. OSB на пол
+
+.secondSectionContent_osbOnFloor
+  width: 100%
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 1024px)
+    .productCard
+      padding-bottom: 40px
+  @media screen and ( max-width: 1000px)
+    > .productCards
+      width: 100%
+      margin-top: 20px
+      .productCard
+        @media screen and ( max-width: 704px)
+          flex: 1 1 40%
+
+        @media screen and ( max-width: 455px)
+          flex-basis: 100%
+          padding-bottom: 20px
+          &:last-of-type
+            padding-bottom: 0px
+          
+/* Фильтр
+/* Заголовок
+
+.secondSectionOptions_osbOnFloor
+  width: 320px
+  @media screen and ( max-width: 1440px)
+    width: 220px
+  @media screen and ( max-width: 1000px)
+    display: none
+
+.filterHeadline_osbOnFloor
+  width: 100%
+  display: flex
+  justify-content: space-between
+  margin-bottom: 30px
+
+.filterText_osbOnFloor
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+
+/* Обнуление чекбоксов
+
+.resetButton_osbOnFloor
+  background-color: #FFFFFF
+  position: relative
+  border: none
+  outline: none
+  width: 126px
+  height: 28px
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+  text-align: left
+  background-image: url('../img/svg/secondSection_page2/closeIconDefault_page2.svg')
+  background-repeat: no-repeat
+  background-position: right
+  transition: color 0.2s ease-in-out, background-image 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    background-image: url('../img/svg/secondSection_page2/closeIconHover_page2.svg')
+    cursor: pointer
+    transition: color 0.2s ease-in-out, background-image 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    background-image: url('../img/svg/secondSection_page2/closeIconActive_page2.svg')
+    cursor: pointer
+    transition: color 0.1s ease-in-out, background-image 0.1s ease-in-out
+
+/* Критерий фильтрации
+
+.filter_osbOnFloor
+  border-top: 1px solid #BFBFBF
+  border-bottom: 1px solid #BFBFBF
+
+.criterionHeadline_osbOnFloor
+  outline: none
+  padding: 20px 0px
+  font-weight: bold
+  border-color: #BFBFBF
+  border-bottom: none
+
+  &:active
+    background-color: #FFFFFF
+
+  &:focus
+    color: #010101
+    background-color: #FFFFFF
+    outline: none
+    box-shadow: none
+    border-color: #BFBFBF    
+
+.accordion-collapse
+  border-bottom: none
+
+.accordion-button:not(.collapsed)::after
+  background-image: url('../img/svg/secondSection_page2/filerArrow_osbOnFloor.svg')
+
+.checkboxArea_osbOnFloor
+  padding: 0px 0px 24px 0px
+
+.checboxLabel_osbOnFloor
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+
+.inStock
+  color: #BFBFBF
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  margin-left: 5px
+
+.formCheckElement_osbOnFloor
+  margin-bottom: 12px
+  padding-left: 0px
+
+  &:last-of-type
+    margin-bottom: 0px
+
+.checkMarker_osbOnFloor 
+  opacity: 0
+  position: absolute
+  z-index: -10
+
+.checkMarker_osbOnFloor+label
+  user-select: none
+  display: flex
+  align-items: center
+
+.checkMarker_osbOnFloor+label::before
+  content: ''
+  display: inline-block
+  width: 28px
+  height: 28px
+  border: 2px solid #BFBFBF
+  border-radius: 4px
+  margin-right: 12px
+  transition: all .2s ease-in-out
+
+.checkMarker_osbOnFloor:checked+label::before
+  background-color: #010101
+  border-color: #010101
+  background-image: url('../img/svg/secondSection_page2/checkedMarker_osbOnFloor.svg') 
+  background-position: center
+  background-repeat: no-repeat
+  transition: all .2s ease-in-out
+
+.filterBtn_osbOnFloor
+  width: 200px
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  text-align: center
+  border-radius: 4px
+  background: #EC8B33
+  border: none
+  outline: none
+  transition: all .2s ease-in-out
+  margin-top: 30px
+  padding: 10px 0px
+
+  &:hover
+    background-color: #010101
+    color: #EC8B33
+  
+  &:active
+    color: #CA782E
+
+  &:focus
+    outline: none
+
+/* Свойства контейнера с материалами. 2 страница. OSB на пол
+
+.productsInf_certificates
+  margin-top: 50px
+  @media screen and ( max-width: 1024px)
+    margin-top: 40px
+    flex-direction: column
+    > .productCards
+      width: 100%
+      margin-bottom: 40px
+      @media screen and ( max-width: 788px)
+        flex-direction: column
+
+        .productCard
+          width: 100%
+          margin-bottom: 20px
+
+        &:last-of-type
+          margin-bottom: 0px
+
+        .productPic
+          img
+            margin: 0px auto
+          .buttonPic
+            padding: 0px
+        
+        .productDescription
+          text-align: center
+          margin-bottom: 10px
+
+        .materialSizeVariation
+          justify-content: center
+          margin-bottom: 10px
+        
+        .materialInStock
+          justify-content: center
+        
+  @media screen and ( max-width: 426px)
+    margin-top: 20px
+
+.productCards
+  width: 74%
+  display: flex
+
+  /* justify-content: space-between;
+  flex-wrap: wrap
+
+/* Общие стили для карточек материала
+
+.productCard
+  width: 30.77%
+  display: block
+  padding-bottom: 59px
+  margin: 0 1%
+
+  &:nth-last-of-type(1), &:nth-last-of-type(2), &:nth-last-of-type(3)
+    padding-bottom: 0px
+
+.productPic
+  display: block
+  margin-bottom: 17px
+  position: relative
+
+  &:hover > .materialImg
+    opacity: 0
+    transition: all .2s ease-in-out
+
+.materialImg
+  position: relative
+  z-index: 1
+  border-radius: 4px
+  display: block
+  @media screen and ( max-width: 455px)
+    margin: 0px auto
+
+.productLink > img
+  opacity: 1
+  transition: all .2s ease-in-out
+
+.buttonPic
+  width: 100%
+  height: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #FFFFFF
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 2
+  background-color: inherit
+  border: none
+  border-radius: 4px
+  opacity: 0
+  transition: all 0.2s ease-in-out
+
+  &:focus
+    outline: none
+
+.productLink:hover > img
+  filter: blur(2px) brightness(0.9)
+  transition: all .1s ease-in-out
+
+.productLink:hover > .buttonPic
+  opacity: 1
+  transition: all 0.2s ease-in-out
+  z-index: 100
+
+.productDescription
+  display: block
+  margin-bottom: 11px
+  @media screen and ( max-width: 455px)
+    text-align: center
+
+  a
+    font-style: normal
+    font-weight: bold
+    text-decoration: none
+    font-size: 20px
+    line-height: 36px
+    color: #010101
+    transition: all 0.2s ease-in-out
+
+    &:hover
+      color: #EC8B33
+      text-decoration: underline
+      transition: all 0.2s ease-in-out
+
+.materialSizeVariation
+  width: 100%
+  // display: flex
+  display: none
+  align-items: center
+  margin-bottom: 17px
+  flex-wrap: wrap
+  @media screen and ( max-width: 455px)
+    justify-content: center
+
+.sizeVariationText
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+  margin-right: 12px
+
+.sizeVarioationButtons
+  display: flex
+  justify-content: space-between
+
+.productBtn
+  display: block
+  width: 40px
+  height: 40px
+  border-radius: 50%
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  text-align: center
+  color: #010101
+  border: 2px solid #010101
+  background-color: inherit
+  outline: none
+  transition: all 0.2s ease-in-out
+
+  &:not(:last-of-type)
+    margin-right: 4px
+
+  &:hover
+    color: #FFFFFF
+    background-color: #EC8B33
+    border: none
+    transition: all 0.2s ease-in-out
+
+  &:active
+    background-color: #010101
+    outline: none
+    transition: all 0.1s ease-in-out
+
+  &:focus
+    outline: none
+    background-color: #EC8B33
+    color: #FFFFFF
+    border-color: #EC8B33
+
+.moreSizes
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  margin-left: 12px
+
+.materialInStock
+  width: 100%
+  display: flex
+  align-items: baseline
+  @media screen and ( max-width: 455px)
+    justify-content: center
+
+.materialPriceValue
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  display: block
+  margin-right: 5px
+
+.materialPrice
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  display: block
+  margin-right: 12px
+
+.materialValue
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+  display: block
+
+.shipPaz_osbOnFloor
+  font-style: italic
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  transition: all 0.2s ease-in-out
+
+.material4Description4_osbOnFloor a
+  font-style: normal
+  font-weight: bold
+  text-decoration: none
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  white-space: nowrap
+  transition: all 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    text-decoration: underline
+    transition: all 0.2s ease-in-out
+
+    .shipPaz_osbOnFloor
+      color: #EC8B33
+      text-decoration: underline
+      transition: all 0.2s ease-in-out
+
+/* Третья секция. 2 страница. OSB на пол
+
+.sectionThree_osbOnFloor
+  width: 100%
+  padding-top: 181px
+  display: block
+  @media screen and ( max-width: 1024px)
+    padding-top: 60px
+  @media screen and ( max-width: 425px)
+    padding-top: 40px
+
+.thirdSection_osbOnFloor
+  width: 100%
+  display: block
+
+.sectionThreeHeadline_osbOnFloor
+  width: 100%
+  font-style: normal
+  display: block
+  font-weight: bold
+  font-size: 48px
+  line-height: 60px
+  color: #010101
+  margin-bottom: 51px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+    text-align: center
+  @media screen and ( max-width: 375px)
+    font-size: 38px
+
+.jobs_osbOnFloor
+  width: 100%
+  display: flex
+  margin-bottom: 43px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 619px)
+    flex-wrap: wrap
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+
+.jobType_osbOnFloor
+  width: 10%
+  position: relative
+  display: block
+  margin-right: 72px
+  @media screen and ( max-width: 1024px)
+    flex: 1 1 20%
+    margin-right: 30px
+    @media screen and ( max-width: 375px)
+      flex-basis: 100%
+      text-align: center
+      margin-bottom: 10px
+      margin-right: 0px
+
+.jobTypeTitle_osbOnFloor
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+
+.jobTypeDescription_osbOnFloor
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+
+.thickness_osbOnFloor
+  width: 24%
+  display: block
+  margin-right: 40px
+  padding-left: 40px
+  border-left: 2px solid #C3BDB9
+  @media screen and ( max-width: 1000px)
+    flex: 1 1 30%
+    margin-right: 30px
+  @media screen and ( max-width: 619px)
+    margin-right: 0px
+  @media screen and ( max-width: 375px)
+    flex-basis: 100%
+    padding-left: 0px
+    border-top: 2px solid #C3BDB9
+    border-left: none
+    text-align: center
+    padding-top: 10px
+
+.thicknessTitle_osbOnFloor
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+
+.thicknessDescription_osbOnFloor
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+
+.styling_osbOnFloor
+  width: 38%
+  display: block
+  @media screen and ( max-width: 1000px)
+    flex: 2 1 30%
+  @media screen and ( max-width: 619px)
+    flex-basis: 100%
+    margin-top: 15px
+  @media screen and ( max-width: 375px)
+    border-top: 2px solid #C3BDB9
+    padding-top: 10px
+    text-align: center
+
+.stylingTitle_osbOnFloor
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+
+.stylingDescription_osbOnFloor
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+
+.thirdSectionImg_osbOnFloor
+  width: 100%
+  display: block
+  margin-bottom: 49px
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+
+.thirdSectionText_osbOnFloor
+  width: 65.7%
+  position: relative
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin: 0px auto
+  @media screen and ( max-width: 1000px)
+    width: 90%
+  @media screen and ( max-width: 619px)
+    width: 100%
+
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    width: 2px
+    height: 100%
+    background-color: #C3BDB9
+    left: -40px
+    @media screen and ( max-width: 619px)
+      display: none
+
+/* Четвертая секция. 2 страница. OSB на пол
+
+.sectionFour_osbOnFloor
+  width: 100%
+  display: block
+  padding-top: 121px
+  @media screen and ( max-width: 1024px)
+    padding-top: 60px
+  @media screen and ( max-width: 425px)
+    padding-top: 40px
+
+.fourthSection_osbOnFloor
+  width: 100%
+  display: block
+
+.fourthSectionHeadline_osbOnFloor
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 48px
+  line-height: 60px
+  color: #010101
+  margin-bottom: 52px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 425px)
+    text-align: center
+    margin-bottom: 20px
+  @media screen and ( max-width: 375px)
+    font-size: 38px
+
+.topMaterialHeadline_osbOnFloor
+  padding-right: 40px
+  display: block
+  width: 100%
+  text-align: right
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+  margin-bottom: 10px
+  @media screen and ( max-width: 1024px)
+    padding-right: 0px
+  @media screen and ( max-width: 1000px)
+    display: none
+
+.fourthSectionContent_osbOnFloor
+  width: 100%
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 1000px)
+    flex-direction: column
+
+  .benefitBlock_osbOnFloor
+    width: 74.28%
+    display: block
+    margin-right: 20px
+
+    > .topMaterialHeadline_osbOnFloor
+      display: none
+      
+    @media screen and ( max-width: 1000px)
+      width: 100%
+
+      > .topMaterialHeadline_osbOnFloor
+        display: block
+        padding-right: 0px
+        text-align: center
+        margin: 20px 0px
+
+    .benefits_osbOnFloor
+      width: 100%
+      display: flex
+      justify-content: space-between
+      margin-bottom: 49px
+      @media screen and ( max-width: 1024px)
+        margin-bottom: 40px
+      @media screen and ( max-width: 717px)
+        flex-direction: column
+      @media screen and ( max-width: 425px)
+        margin-bottom: 20px
+
+      .benefit_osbOnFloor
+        display: block
+        width: 30.76%
+        background-color: #F0EFEE
+        font-style: normal
+        font-weight: bold
+        font-size: 20px
+        line-height: 36px
+        color: #000000
+        text-align: center
+        padding-top: 73px
+        padding-bottom: 71px
+        margin-right: 40px
+
+        &:last-of-type
+          margin-right: 0px
+
+        @media screen and ( max-width: 1000px)
+          flex: 1 1 30%
+
+        @media screen and ( max-width: 717px)
+          width: 100%
+          padding: 20px 0px
+          margin: 0px
+          margin-bottom: 15px
+
+          &:last-of-type
+            margin-bottom: 0px
+
+    .benefitDescription_osbOnFloor
+      width: 100%
+      display: block
+      font-style: normal
+      font-weight: normal
+      font-size: 20px
+      line-height: 36px
+      color: #000000
+      white-space: normal
+
+  .topMaterial_osbOnFloor
+    width: auto 
+    margin: 0px auto
+/* Карточка лучшего материала
+
+.topMaterial_osbOnFloor
+  width: 22.85%
+  display: block
+  margin-left: 40px
+
+.topMaterial2Pic_osbOnFloor
+  display: block
+  width: 100%
+  margin-bottom: 17px
+  position: relative
+
+#topMaterial_osbOnFloor
+  width: 100%
+  height: 100%
+  display: block
+  position: relative
+  z-index: 1
+
+.buttonPicTop_osbOnFloor
+  width: 100%
+  height: 100%
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #FFFFFF
+  position: absolute
+  background-color: inherit
+  top: 0
+  left: 0
+  z-index: 2
+  border-radius: 4px
+  border: none
+  opacity: 0
+  transition: all 0.2s ease-in-out
+
+.linkPicTop_osbOnFloor > img
+  transition: all .2s ease-in-out
+
+.linkPicTop_osbOnFloor:hover > img
+  filter: blur(2px) brightness(0.9)
+  transition: all .2s ease-in-out
+
+.linkPicTop_osbOnFloor:hover
+  .buttonPicTop_osbOnFloor
+    opacity: 1
+    background-color: inherit
+    transition: all 0.2s ease-in-out
+
+  #topMaterial_osbOnFloor
+    opacity: 1
+    transition: all 0.2s ease-in-out
+
+.topMaterialDescription_osbOnFloor
+  display: block
+  width: 100%
+  margin-bottom: 11px
+  font-style: normal
+  font-weight: bold
+  text-decoration: none
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  transition: all 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    text-decoration: underline
+    transition: all 0.2s ease-in-out
+
+.topMaterialSizeVariation_osbOnFloor
+  width: 100%
+  display: flex
+  align-items: center
+  margin-bottom: 17px
+  flex-wrap: wrap
+
+.sizeVariationTopText_osbOnFloor
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+  margin-right: 12px
+
+.sizeVarioationTopButtons_osbOnFloor
+  display: flex
+  margin-right: 12px
+
+.productBtn
+  display: block
+  width: 40px
+  height: 40px
+  border-radius: 50%
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  text-align: center
+  color: #010101
+  border: 2px solid #010101
+  background-color: inherit
+  outline: none
+  transition: all 0.2s ease-in-out
+  margin-right: 4px
+
+  &:last-of-type
+    margin-right: 0px
+
+  &:hover
+    color: #FFFFFF
+    background-color: #EC8B33
+    border: none
+    transition: all 0.2s ease-in-out
+
+  &:active
+    background-color: #010101
+    outline: none
+    transition: all 0.1s ease-in-out
+
+.sizeVariationTopPlusNumber_osbOnFloor
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+
+.topMaterialInStock_osbOnFloor
+  width: 100%
+  display: flex
+  align-items: baseline
+
+.topMaterialPrice_osbOnFloor
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-right: 16px
+
+.materialValueNumber
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+  margin-right: 5px
+
+.topMaterialValue_osbOnFloor
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+
+/* Пятая секция. 2 страница. OSB на пол
+
+.sectionFive_osbOnFloor
+  display: block
+  width: 100%
+  padding-top: 121px
+  @media screen and ( max-width: 1024px)
+    padding-top: 60px
+  @media screen and ( max-width: 425px)
+    padding-top: 40px
+
+.fifthSection_osbOnFloor
+  width: 100%
+  display: flex
+  flex-direction: column
+  border-bottom: 2px solid #F0EFEE
+  padding-bottom: 120px
+  @media screen and ( max-width: 1024px)
+    padding-bottom: 60px
+  @media screen and ( max-width: 425px)
+    padding-bottom: 40px
+
+.fifthSectionHeadline_osbOnFloor
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 48px
+  line-height: 60px
+  color: #010101
+  margin-bottom: 51px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+    text-align: center
+  @media screen and ( max-width: 375px)
+    font-size: 38px
+
+.assemblyTechnology_osbOnFloor
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #000000
+  margin-bottom: 51px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 717px)
+    text-align: center
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+
+.technologyList_osbOnFloor
+  width: 100%
+  display: flex
+  justify-content: space-between
+  margin-bottom: 49px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 717px)
+    flex-direction: column
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+
+.technologyOne_osbOnFloor
+  width: 44%
+  display: block
+  border-right: 2px solid #F0EFEE
+  padding-top: 44px
+  padding-bottom: 59px
+
+.technologyOneIcon_osbOnFloor
+  display: block
+  width: 80px
+  height: 80px
+  margin: 0px auto
+  margin-bottom: 21px
+  @media screen and ( max-width: 717px)
+    margin-bottom: 10px
+
+.technologyOneDescription_osbOnFloor
+  width: 100%
+  display: block
+  text-align: center
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-top: 10px
+
+.technologyTwo_osbOnFloor
+  padding-top: 45px
+  width: 45%
+  display: block
+  border-right: 2px solid #F0EFEE
+  padding-bottom: 59px
+
+.technologyTwoIcon_osbOnFloor
+  display: block
+  width: 80px
+  height: 80px
+  margin: 0px auto
+  margin-bottom: 21px
+  @media screen and ( max-width: 717px)
+    margin-bottom: 10px
+
+.technologyTwoDescription_osbOnFloor
+  display: block
+  width: 100%
+  text-align: center
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+
+.technologyThree_osbOnFloor
+  padding-top: 44px
+  width: 44%
+  display: block
+  padding-bottom: 59px
+
+.technologyThreeIcon_osbOnFloor
+  display: block
+  width: 80px
+  height: 80px
+  margin: 0px auto
+  margin-bottom: 21px
+  @media screen and ( max-width: 717px)
+    margin-bottom: 10px
+
+.technologyThreeDescription_osbOnFloor
+  width: 100%
+  display: block
+  text-align: center
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-top: 10px
+
+.technology_osbOnFloor
+  @media screen and ( max-width: 1000px)
+    flex: 1 1 30%
+    padding: 44px 10px 0px 10px
+  @media screen and ( max-width: 717px)
+    width: 100%
+    border-right: none
+    &:not(:last-of-type)
+      border-bottom: 2px solid #F0EFEE
+
+    &:first-of-type
+      padding-top: 0px
+      padding-bottom: 15px
+
+    &:nth-of-type(2)
+      padding-top: 15px
+      padding-bottom: 15px
+
+    &:last-of-type
+      padding-top: 15px
+      padding-bottom: 15px
+
+.fifthSectionText_osbOnFloor
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 43px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+    br
+      display: none
+
+.fifthSectionButton_osbOnFloor
+  width: 320px
+  height: 60px
+  @media screen and ( max-width: 425px)
+    margin: 0px auto
+  @media screen and ( max-width: 375px)
+    width: 100%
+
+.fifthSectionBtn_osbOnFloor
+  width: inherit
+  height: inherit
+  border: 2px solid #EC8B33
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  text-align: center
+  border-radius: 1000px
+  outline: none
+  background: inherit
+  transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out
+
+  &:hover
+    background-color: #EC8B33
+    border-color: #EC8B33
+    transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out
+
+  &:active
+    background-color: #CA782E
+    border-color: #CA782E
+    transition: background 0.1s ease-in-out, border-color 0.2s ease-in-out
+
+/* ТРЕТЬЯ СТРАНИЦА.  КАРТОЧКА ТОВАРА
+/* Первая секция. 3 страница. Карточка товара
+
+.sectionOne_productCard
+  width: 100%
+  @media screen and ( max-width: 1440px)
+    > .wrapper
+      width: 90%
+
+.firstSection_productCard
+  width: 100%
+  position: relative
+  display: block
+
+/* Главный контент
+/* Основной контейнер
+
+.firstSectionPage3Content
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  @media screen and ( max-width: 768px)
+    flex-direction: column-reverse
+
+/* Переключатель картинок
+/* Фоновое окно
+
+.page3ContentImg
+  width: 48%
+  padding-top: 577px
+  padding-bottom: 10px
+  background-repeat: no-repeat
+  background-size: contain
+  transition: all 0.2s ease-in-out
+  box-shadow: 0 0 5px 0 #34495e
+  border-radius: 7px
+  background-size: 100% 100%
+  @media screen and ( max-width: 1024px)
+    padding-top: 400px
+  @media screen and ( max-width: 768px)
+    width: 70%
+    margin: 0px auto
+  @media screen and ( max-width: 674px)
+    width: 80%
+  @media screen and ( max-width: 425px)
+    width: 100%
+    padding-top: 300px
+
+/* Кнопки
+/* Общие стили кнопок
+
+.previewImg_productCard
+  padding: 0px
+  display: block
+  border-radius: 50%
+  height: 60px
+  width: 60px
+  outline: none
+  border: none
+  margin-right: 20px
+
+  &:last-of-type
+    margin-right: 0px
+
+  img
+    border-radius: 50%
+
+  &:hover
+    border: 2px solid #EC8B33
+
+  &:focus
+    outline: none
+
+  &:active
+    border: 2px solid #CA782E
+    outline: none
+
+/* Задниый фон для кнопок
+
+.contentImgStrip_productCard
+  padding: 10px 0px 10px 20px
+  display: flex
+  width: 100%
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(199, 190, 180, 0))
+
+/* Сам переключатель
+
+.shownIcon_productCard
+  border: 2px solid #EC8B33
+
+/* Вторая секция. 3 страница. Карточка товара
+
+.sectionTwo_productCard
+  width: 100%
+  display: block
+  padding-top: 182px
+  @media screen and ( max-width: 1024px)
+    padding-top: 0px
+
+.secondSection_productCard
+  width: 100%
+  display: block
+
+/* Меню второй секции
+
+.secondSection_productCardMenu
+  display: block
+  width: 100%
+  margin-top: 50px
+  @media screen and ( max-width: 1024px)
+    margin-top: 40px
+  @media screen and ( max-width: 425px)
+    margin-top: 20px
+
+/* Кнопки
+.secondSectionTab_productCardMenuButton
+  display: block
+  width: (320px * 100%) / 1400px 
+
+.secondSection_productCardMenuButtons
+  width: 74%
+  display: flex
+  justify-content: space-between
+  margin-bottom: 52px
+  @media screen and ( max-width: 768px)
+    width: 100%
+  @media screen and ( max-width: 425px)
+    justify-content: center
+    .secondSectionTab_productCardMenuButton
+      flex-basis: 70%
+      margin-right: 10px
+      margin-bottom: 10px
+      text-align: center
+      &:last-of-type
+        margin-bottom: 0px
+
+.nav-link.tabLink_productCard
+  border-top: 2px solid #C3BDB9
+  border-radius: 0px
+  padding: 0px
+  padding-top: 15px
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  background-color: #FFFFFF
+
+  &:hover
+    color: #EC8B33
+    border-top: 2px solid #EC8B33
+    transition: all 0.1s ease-in-out
+
+  &:active
+    color: #CA782E
+    border-top: 2px solid #CA782E
+    transition: all 0.1s ease-in-out
+
+  &.active
+    border-top: 2px solid #CA782E
+    background-color: #FFFFFF
+    color: #CA782E
+    transition: all 0.1s ease-in-out
+
+/* Описание
+/* Характеристики
+
+.secondSection_productCardMenuDescriptionCharacterisitics
+  width: 62%
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #4E4E4E
+  text-align: justify
+  transition: all 0.1s ease-in-out
+  @media screen and ( max-width: 1440px)
+    width: 100%
+
+  li
+    width: 100%
+    border-bottom: 2px dotted #4E4E4E
+    position: relative
+    display: flex
+    padding: 0px
+    justify-content: space-between
+    margin-bottom: 10px
+    height: 36px
+    margin-bottom: 5px
+    @media screen and ( max-width: 923px)
+      position: static
+      border-bottom: 2px solid #4E4E4E
+      height: auto
+      margin-bottom: 0px
+      &:first-of-type
+        border-top: 2px solid #4E4E4E
+
+    .characterisitic_productCard
+      display: block
+      height: 40px
+      background-color: #FFFFFF
+      padding-right: 4px
+      padding-top: 4px
+      margin-right: 20px
+      @media screen and ( max-width: 923px)
+        height: auto
+        padding-top: 0px
+        flex: 1 0 50%
+        border-right: 2px solid #4E4E4E
+        margin-right: 0px
+
+    .value_productCard
+      display: block
+      height: 40px
+      background-color: #FFFFFF
+      width: 161px
+      padding-left: 4px
+      padding-top: 4px
+      @media screen and ( max-width: 923px)
+        height: auto
+        width: 100%
+        padding-top: 0px
+        flex: 1 0 50%
+        text-align: right
+
+  .characterisitic_productCard
+    font-style: normal
+    font-weight: normal
+    font-size: 20px
+    line-height: 36px
+    color: #4E4E4E
+
+  .value_productCard
+    font-style: normal
+    font-weight: normal
+    font-size: 20px
+    line-height: 36px
+    color: #010101
+
+/* Характеристики
+
+.characterisitcs-text, .reviews-text
+  display: block
+  width: 62%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  @media screen and ( max-width: 1024px)
+    width: 100%
+
+/* Отзывы
+
+/* Характеристики товара
+/* Основной блок
+
+.page3ContentMenu
+  width: 48%
+  position: relative
+  display: block
+  @media screen and ( max-width: 768px)
+    width: 100%
+    margin-bottom: 40px
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+
+/* Заголовок товара
+
+.page3ContentHeadline
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 35px
+  position: relative
+  z-index: 1
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 20px
+  @media screen and ( max-width: 425px)
+    text-align: center
+
+/* Производитель
+
+.page3Manufacturer
+  width: 100%
+  display: flex
+  align-items: center
+  margin-bottom: 10px
+  @media screen and ( max-width: 425px)
+    justify-content: center
+
+.manufacturerIs_productCard
+  display: block
+  margin-right: 8px
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+
+.manufacturerName_productCard
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+
+/* Толщины. Кнопки
+
+.thickness_productCard
+  width: 100%
+  display: flex
+  align-items: center
+  margin-bottom: 39px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 20px
+    flex-wrap: wrap
+  @media screen and ( max-width: 425px)
+    justify-content: center
+
+.thicknessText_productCard
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+  margin-right: 8px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 10px
+  @media screen and ( max-width: 768px)
+    margin-bottom: 0px
+  @media screen and ( max-width: 425px)
+    margin-bottom: 10px
+
+.thicknessButtons_productCard
+  width: 100%
+  height: 40px
+  display: flex
+  @media screen and ( max-width: 768px)
+    width: auto
+
+.thicknessButton_productCard
+  display: block
+  width: 40px
+  height: 40px
+  text-align: center
+  border: 2px solid #010101
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  background-color: inherit
+  border-radius: 50%
+  outline: none
+  transition: all 0.2s ease-in-out
+  margin-right: 4px
+
+  &:last-of-type
+    margin-right: 0px
+
+  &:hover
+    border: none
+    color: #FFFFFF
+    background-color: #EC8B33
+    transition: all 0.2s ease-in-out
+
+  &:focus
+    background-color: #EC8B33
+    outline: none
+    color: #FFFFFF
+    border-color: #EC8B33
+
+  &:active
+    border: 2px solid #010101
+    color: #FFFFFF
+    background-color: #010101
+    transition: all 0.1s ease-in-out
+
+/* Цена товара
+
+.price_productCard
+  width: 100%
+  display: flex
+  align-items: baseline
+  margin-bottom: 29px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 20px
+  @media screen and ( max-width: 425px)
+    justify-content: center
+
+.priceForPiece_productCard
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  line-height: 36px
+  color: #010101
+  margin-right: 24px
+
+.priceForPieceValue_productCard
+  font-weight: bold
+
+.priceForMeter_productCard
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #4E4E4E
+
+.priceForMeterValue_productCard
+  font-weight: bold
+
+/* Расчет кол-во OSB
+
+.calculator_productCard
+  width: 100%
+  display: block
+  padding-bottom: 34px
+  margin-bottom: 19px
+  border-bottom: 2px solid #BFBFBF
+  @media screen and ( max-width: 1024px)
+    padding-bottom: 20px
+
+.calculatorButtons_productCard
+  width: 100%
+  display: flex
+  margin-bottom: 10px
+
+/* Форма
+
+.productForm_productCard
+  display: flex
+  width: 100%
+  @media screen and ( max-width: 1024px)
+    flex-wrap: wrap
+  @media screen and ( max-width: 425px)
+    justify-content: center   
+
+/* Кнопка "кол-во единиц"
+
+.productCounter_productCard
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 120px
+  height: 60px
+  background-color: inherit
+  border: 2px solid #BFBFBF
+  border-radius: 4px
+  margin-right: 20px
+  position: relative
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 10px
+  @media screen and ( max-width: 375px)
+    margin-right: 10px
+
+/* Кнопка минус
+
+.calculatorMinus_productCard
+  width: 8px
+  height: 36px
+  border: none
+  outline: none
+  font-style: normal
+  font-weight: normal
+  font-size: 27px
+  line-height: 36px
+  color: #010101
+  position: absolute
+  left: 5px
+  z-index: 100
+  background-color: inherit
+  user-select: none
+  transition: all 0.2s ease-in-out
+  text-decoration: none
+
+.buttonDisabled_productCard
+  opacity: 0.2 !important
+  transition: opacity 0.2s ease-in-out
+
+.calculatorMinus_productCard
+  &:hover
+    color: #EC8B33
+
+  &:active
+    color: #CA782E
+
+  &:focus
+    outline: none
+
+/* Счетчик
+
+.calculatorNumber_productCard
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 27px
+  line-height: 36px
+  color: #010101
+  width: 100%
+  text-align: center
+  border: none
+
+  &:focus
+    outline: none
+
+/* Убираем дефолтные стрелки
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none
+  margin: 0
+
+/* Кнопка плюс
+
+.calculatorPlus_productCard
+  width: 12px
+  height: 36px
+  border: none
+  outline: none
+  font-style: normal
+  font-weight: normal
+  font-size: 27px
+  line-height: 36px
+  color: #010101
+  background-color: inherit
+  position: absolute
+  right: 9px
+  top: 8px
+  z-index: 100
+  user-select: none
+  text-decoration: none
+
+  &:hover
+    color: #EC8B33
+
+  &:active
+    color: #CA782E
+
+  &:focus
+    outline: none
+
+/* Кнопка "добавить в корзину"
+
+.buttonSub_productCard
+  position: relative
+
+.addToShoppingCart_productCard
+  padding: 12px 60px
+  height: 60px
+  border: none
+  background-color: #EC8B33
+  outline: none
+  border-radius: 4px
+  text-align: center
+  vertical-align: middle
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  user-select: none
+  transition: background-color 0.25s ease, color 0.25s ease-in-out
+
+  &:hover
+    background-color: #010101
+    color: #EC8B33
+    transition: background-color 0.25s ease, color 0.25s ease-in-out
+
+  &:active
+    background-color: #010101
+    color: #CA782E
+    transition: background-color 0.1s ease, color 0.1s ease-in-out
+    outline: none
+
+  &:focus
+    outline: none
+
+.popover_productCard
+  text-align: center
+  opacity: 0
+  transition: all .2s ease-in-out
+  padding: 5px 0px
+  border: 2px solid #4E4E4E
+  color: #4E4E4E
+  width: auto
+
+.popoverText_productCard
+  display: block
+  text-align: center
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+  padding-left: 10px
+  padding-right: 10px
+
+/* Кнопка расчета кол-ва OSB
+
+.quantityCalculation_productCard
+  width: 100%
+  display: flex
+  position: relative
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  border: none
+  outline: none
+  background-color: inherit
+  transition: all 0.2s ease-in-out
+  padding-left: 28px
+  @media screen and ( max-width: 425px)
+    margin: 0px auto
+    width: auto
+
+  &::before
+    content: ""
+    position: absolute
+    width: 20px
+    height: 20px
+    left: 0
+    top: 3.5px
+    background-image: url('../img/svg/firstSection_page3/Calculation.svg')
+    transition: color 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+/* В наличии на складе
+
+.inStock_productCard
+  width: 100%
+  display: block
+  color: #62CC58
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  margin-bottom: 13px
+  @media screen and ( max-width: 425px)
+    text-align: center
+
+.countInStock_productCard
+  font-weight: bold
+
+/* Дополнительная информация
+
+.additionalInformation_productCard
+  width: 100%
+  border-bottom: 2px solid #BFBFBF
+  padding-bottom: 18px
+  margin-bottom: 15px
+  display: block
+
+/* Самовывоз
+
+.pickup_productCard
+  display: block
+  width: 100%
+  margin-bottom: 8px
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+
+.pickupType_productCard
+  display: inline-block
+  color: #4E4E4E
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  transition: color 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+.pickupCity_productCard
+  display: inline-block
+  color: #4E4E4E
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+
+  &:hover
+    color: #EC8B33
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+.pickupDeliveryDate_productCard
+  font-style: italic
+  display: inline-block
+
+/* Доставка на объект
+
+.delivery_productCard
+  display: flex
+  color: #4E4E4E
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  @media screen and ( max-width: 1024px)
+    flex-wrap: wrap
+
+.deliveryLink_productCard
+  display: inline-block
+  color: #4E4E4E
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  margin-right: 5px
+
+  &:hover
+    color: #EC8B33
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+.deliveryData_productCard
+  display: inline-block
+  font-style: italic
+
+/* Расчитанная стоимость
+
+.cost_productCard
+  width: 100%
+  display: block
+
+/* 1 стоимость
+
+.costOne_productCard
+  width: 100%
+  display: flex
+  align-items: baseline
+  @media screen and ( max-width: 1024px)
+    flex-wrap: wrap
+  @media screen and ( max-width: 425px)
+    justify-content: center
+
+.costOne1_productCard
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-right: 12px
+
+.costOne2_productCard
+  display: flex
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+
+.discount1_productCard
+  display: block
+  font-weight: 600
+  color: #010101
+  margin-left: 5px
+
+/* 2 стоимость
+
+.costTwo_productCard
+  width: 100%
+  display: flex
+  align-items: baseline
+  @media screen and ( max-width: 1024px)
+    flex-wrap: wrap
+  @media screen and ( max-width: 425px)
+    justify-content: center
+
+.costTwo1_productCard
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-right: 12px
+
+.costTwo2_productCard
+  display: flex
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+
+.discount2_productCard
+  font-weight: 600
+  color: #010101
+  display: block
+  margin-left: 5px
+
+/* Третья секция. 3 страница. Карточка товара
+
+.sectionThree_productCard
+  width: 100%
+  display: block
+  padding-top: 121px
+  padding-bottom: 119px
+  border-bottom: 2px solid #F0EFEE
+  .thirdSection_productCard
+    .sectionTitle_index
+      margin-bottom: 20px
+  @media screen and ( max-width: 1024px)
+    padding-top: 0px
+    padding-bottom: 60px
+  @media screen and ( max-width: 768px)
+    .thirdSection_productCard
+      > .productCards
+        width: 100%
+        @media screen and ( max-width: 674px)
+          flex-direction: column
+          .productCard
+            width: 100%
+            margin-bottom: 40px
+            @media screen and ( max-width: 425px)
+              margin-bottom: 20px
+            &:last-of-type
+              margin-bottom: 0px
+            .materialImg
+              margin: 0px auto
+            .productDescription
+              text-align: center
+            .materialSizeVariation
+              justify-content: center
+              margin-bottom: 10px
+            .materialInStock
+              justify-content: center
+  @media screen and ( max-width: 425px)
+    padding-bottom: 40px
+
+.thirdSection_productCard
+  width: 100%
+  display: block
+  > .sectionTitle_index
+    margin-bottom: 50px
+    @media screen and ( max-width: 1024px)
+      margin-bottom: 40px
+
+/* Блок с материалами
+
+.materials_productCard
+  display: flex
+  justify-content: space-between
+  width: 74.3%
+
+/* ЧЕТВЁРТАЯ СТРАНИЦА.  ДОСТАВКА
+/* Первая секция. 4 страница. Доставка
+
+.sectionOne_delivery
+  width: 100%
+  @media screen and ( max-width: 1440px)
+    > .wrapper
+      width: 90%
+
+.firstSection_delivery
+  display: block
+  width: 100%
+
+/* Главный контент
+/* Основной контейнер
+
+.firstSectionPage4Content
+  width: 100%
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 980px)
+    flex-direction: column
+
+/* Меню доставки
+
+.deliveryMenu_delivery
+  flex: 1 1 48.57%
+  display: block
+  margin-right: 160px
+  @media screen and ( max-width: 1440px)
+    margin-right: 80px
+  @media screen and ( max-width: 1024px)
+    margin-right: 20px
+    > .sectionTitle_index
+      padding-top: 40px
+  @media screen and ( max-width: 980px)
+    margin-right: 0px
+
+/* Кнопки-переключатели
+
+.deliveryMenuButtoms_delivery
+  width: 100%
+  display: flex
+  margin-bottom: 49px !important
+  flex-wrap: nowrap
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 0px !important
+
+/* Кнопка доставки
+
+.deliveryButton_delivery
+  width: 47.06%
+  display: block
+  padding-top: 15px
+  padding-left: 0px
+  border: none
+  outline: none
+  border-top: 2px solid #C3BDB9
+  background-color: inherit
+  transition: all 0.2s ease-in-out
+  margin-right: 40px
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  text-align: left
+
+  &:hover
+    border-color: #EC8B33
+    color: #EC8B33
+    transition: all 0.2s ease-in-out
+
+  &:active
+    border-color: #CA782E
+    color: #CA782E
+    transition: all 0.1s ease-in-out
+
+  &:focus
+    outline: none
+
+  &:last-of-type
+    margin-right: 0px
+
+/* Переключатель кнопок
+
+.buttonClick_delivery
+  border-top: 2px solid #EC8B33
+  color: #EC8B33
+  transition: all 0.2s ease-in-out
+
+/* Выбор города
+
+.deliveryMenuYourCity_delivery
+  display: block
+  width: 100%
+  margin-top: 8px
+  margin-bottom: 40px
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+
+  form
+    position: relative
+
+.label_delivery
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  margin-bottom: 14px
+  cursor: default
+
+/* Поле ввода
+
+#city_delivery
+  width: 100%
+  background-color: #F0EFEE
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  border: none
+  border-radius: 4px
+  padding-top: 30px
+  padding-left: 20px
+  outline: none
+  transition: background-color 0.2s ease-in-out
+
+  &:hover
+    border: 2px solid #EC8B33
+    background-color: #F0EFEE
+    transition: background-color 0.2s ease-in-out
+
+  &:active
+    border-color: none
+    background-color: #F0EFEE
+    transition: background-color 0.2s ease-in-out
+
+.placeholder1_delivery
+  position: absolute
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #4E4E4E
+  width: 180px
+  top: 10px
+  left: 20px
+  transition: all 0.2s ease-in-out
+  cursor: text
+  transform-origin: top left
+
+.shown_delivery
+  opacity: 1 !important
+  visibility: visible !important
+  transition: opacity 0.2s ease-in-out
+
+.hidden
+  opacity: 0 !important
+  transition: opacity 0.12s ease-in-out
+
+.moveCityText_delivery
+  transform: translateY(-10px) scale(0.8)
+  transition: all 0.2s ease-in-out
+  transform-origin: top left
+
+/* Кнопка обнуления поля
+
+.resetCity_delivery
+  width: 12px
+  height: 12px
+  position: absolute
+  background-image: url('../img/svg/firstSection_page4/Reset\ button.svg')
+  background-color: inherit
+  right: 24px
+  top: 25px
+  border: none
+  outline: none
+  opacity: 0
+  transform: scale(1)
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, opacity 0.2s ease-in-out, visibility 0.2s ease-in-out
+  border-radius: 50%
+  display: inline-block
+
+.shown_delivery
+  opacity: 1
+  transition: opacity 0.2s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out
+
+.resetCity_delivery
+  &:hover
+    transform: scale(1.5)
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out
+
+  &:active
+    transform: scale(1.8)
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out
+  
+  &:focus
+    outline: none
+
+/* Опции доставки
+
+.deliveryOptions_delivery
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: stretch
+  flex-wrap: wrap
+  
+/* Основные стили кнопок
+
+.deliveryOption_delivery
+  width: 47.05%
+  border: 2px solid #F0EFEE
+  border-radius: 4px
+  background-color: inherit
+  display: flex
+  flex-direction: column
+  padding: 19px 20px 18px 20px
+  margin-bottom: 20px
+  outline: none
+  transition: border-color 0.2s ease-in-out
+
+  &:hover
+    border-color: #EC8B33
+    transition: border-color 0.1s ease-in-out
+
+  &:active
+    border-color: #CA782E
+    transition: border-color 0.1s ease-in-out
+  
+  &:focus
+    outline: none
+  @media screen and ( max-width: 425px)
+    flex-basis: 100%
+
+/* Опции
+
+.deliveryOptionText_delivery
+  display: flex
+  width: 100%
+  align-items: baseline
+  margin-bottom: 15px
+  flex-wrap: wrap
+  justify-content: space-around
+
+.deliveryOptionText1_delivery
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  line-height: 36px
+  color: #010101
+  margin-right: 12px
+
+.deliveryOptionText2_delivery
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  background-color: #F0EFEE
+  border: none
+  border-radius: 4px
+  padding-top: 2px
+  padding: 0px 10px
+
+.deliveryOptionDescription_delivery
+  width: 100%
+  text-align: justify
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+
+  .car_delivery, .weight_delivery
+    font-style: italic
+
+.car_delivery, .weight_delivery
+  font-style: italic
+
+/* Дополнительная информация
+/* Контент опций
+
+.deliveryContent_delivery
+  display: block
+  width: 40%
+  height: 800px
+  z-index: 1
+  transition: all 0.2s ease-in-out
+  border-radius: 5px
+  box-shadow: 0 0 8px -1px #34495e
+  background-repeat: no-repeat
+  background-size: 100% 100%
+  @media screen and ( max-width: 1024px)
+    height: 600px
+  @media screen and ( max-width: 980px)
+    margin: 0px auto
+    margin-top: 40px
+    width: 60% 
+  @media screen and ( max-width: 630px)
+    display: none
+    
+
+/* Вторая секция. 4 страница. Доставка
+
+.sectionTwo_delivery
+  width: 100%
+  display: block
+  padding-top: 182px
+  @media screen and ( max-width: 1024px)
+    padding-top: 60px
+  @media screen and ( max-width: 425px)
+    padding-top: 40px
+
+.secondSection_delivery
+  width: 100%
+  display: block
+  .sectionTitle_index
+    padding-top: 0px
+
+
+/* Основной контент второй секции
+
+.secondSection_deliveryMainContent
+  width: 100%
+  display: flex
+  margin-top: 50px
+  @media screen and ( max-width: 1024px)
+    margin-top: 40px
+  @media screen and ( max-width: 980px)
+    flex-wrap: wrap
+  @media screen and ( max-width: 425px)
+    margin-top: 20px
+
+/* Общие стили для контента
+
+.content_delivery
+  width: 22.85%
+  display: block
+  background-color: #F0EFEE
+  margin-right: 40px
+  border-radius: 4px
+  box-shadow: 0 0 5px -1px #34495e
+  @media screen and ( max-width: 980px)
+    flex: 1 1 40%
+    margin-right: 0px
+    margin: 2%
+  @media screen and ( max-width: 483px)
+    flex-basis: 100%
+
+  &:last-of-type
+    margin-right: 0px
+    @media screen and ( max-width: 980px)
+      margin: 2%
+
+.contentBackground_delivery
+  display: block
+  width: 100%
+  margin-bottom: 15px
+  border-radius: 5px 5px 0px 0px
+
+  img
+    border-radius: 5px 5px 0px 0px
+    display: block
+    width: 100%
+
+.contentTitle_delivery
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 8px
+  padding-left: 20px
+  @media screen and ( max-width: 483px)
+    padding-left: 0px
+    text-align: center
+
+.contentDescription_delivery
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #4E4E4E
+  padding: 0px 22px 22px 20px
+
+/* Третья секция. 4 страница. Доставка
+
+.sectionThree_delivery
+  width: 100%
+  display: block
+  padding-top: 182px
+  padding-bottom: 119px
+  border-bottom: 2px solid #F0EFEE
+  @media screen and ( max-width: 1024px)
+    padding-top: 0px
+    padding-bottom: 60px
+  @media screen and ( max-width: 425px)
+    padding-bottom: 40px
+
+.thirdSection_delivery
+  width: 100%
+  display: block
+
+/* Основной контент третьей секции
+
+.thirdSectionMainContent_delivery
+  width: 100%
+  display: flex
+  justify-content: space-between
+  margin-top: 50px
+  @media screen and ( max-width: 1024px)
+    margin-top: 40px
+  @media screen and ( max-width: 980px)
+    flex-wrap: wrap
+  @media screen and ( max-width: 425px)
+    margin-top: 20px
+
+.card_delivery
+  width: 31.42%
+  display: block
+  @media screen and ( max-width: 980px)
+    flex-basis: 50%
+    &:last-of-type
+      flex-basis: 100% 
+      margin-top: 20px
+  @media screen and ( max-width: 603px)
+    flex-basis: 100%
+    &:last-of-type
+      margin-top: 0px
+
+/* 1-ый способ оплаты
+
+.cashIcon_delivery
+  height: 80px
+  width: 60px
+  display: block
+  background-image: url('../img/svg/thirdSection_page4/Icon1_page4.svg')
+  background-repeat: no-repeat
+  background-position: center
+  margin: 0px auto
+  margin-bottom: 34px
+  @media screen and ( max-width: 768px)
+    margin-bottom: 10px
+
+.title_delivery
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  display: block
+  line-height: 36px
+  color: #010101
+  margin-bottom: 22px
+  text-align: center
+  @media screen and ( max-width: 768px)
+    margin-bottom: 10px
+
+.description_delivery
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #4E4E4E
+  text-align: center
+
+/* 2-ой способ оплаты
+
+.cashlessIcon_delivery
+  height: 80px
+  width: 288.29px
+  display: block
+  background-image: url('../img/svg/thirdSection_page4/Icon2_page4.svg')
+  background-repeat: no-repeat
+  background-position: center
+  margin: 0px auto
+  margin-bottom: 34px
+  @media screen and ( max-width: 768px)
+    margin-bottom: 10px
+
+/* 3-й способ оплаты
+
+.creditIcon_delivery
+  height: 80px
+  width: 288.29px
+  display: block
+  background-image: url('../img/svg/thirdSection_page4/Icon3_page4.svg')
+  background-repeat: no-repeat
+  background-position: center
+  margin: 0px auto
+  margin-bottom: 34px
+  @media screen and ( max-width: 768px)
+    margin-bottom: 10px
+
+/* ПЯТАЯ СТРАНИЦА. СЕРТИФИКАТЫ
+/* Первая секция. 5 страница. Сертификаты
+
+.sectionOne_certificates
+  width: 100%
+  display: block
+  padding-top: 28px
+  @media screen and ( max-width: 1440px)
+    > .wrapper
+      width: 90%
+  @media screen and ( max-width: 768px)
+    .firstSection_certificates
+      .firstSectionPage5Content
+        .sectionTitle_index
+          padding-top: 20px
+          text-align: center
+
+.firstSection_certificates
+  position: relative
+  width: 100%
+  display: block
+
+/* Основной контейнер
+
+.firstSectionPage5Content
+  width: 100%
+  display: block
+
+  .sectionTitle_index
+    padding-top: 40px
+    @media screen and ( max-width: 426px)
+      text-align: center
+    @media screen and ( max-width: 376px)
+      font-size: 38px
+    
+/* Кнопки производителей
+
+.manufacturersButtons
+  width: 100%
+  display: flex
+  margin-bottom: 49px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 768px)
+    flex-wrap: wrap
+  @media screen and ( max-width: 426px)
+    margin-bottom: 0px
+
+/* Общие стили кнопок
+
+.button_certificates
+  width: 200px
+  border: none
+  outline: none
+  border-top: 2px solid #C3BDB9
+  padding-top: 15px
+  padding-left: 0px
+  margin-right: 40px
+  text-align: left
+  background-color: inherit
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  transition: all .2s ease-in-out
+
+  &:hover
+    border-color: #EC8B33
+    color: #EC8B33
+    transition: all .2s ease-in-out
+
+  &:active
+    border-color: #CA782E
+    color: #CA782E
+    transition: all .2s ease-in-out
+
+  &:focus
+    outline: none
+  @media screen and ( max-width: 768px)
+    flex: 1 1 40%
+    margin-bottom: 10px
+    &:last-of-type
+      flex: 0 1 40%
+      margin: 0px auto
+      @media screen and ( max-width: 446px)
+        flex-basis: 100%
+  @media screen and ( max-width: 446px)
+    flex-basis: 60%
+    margin-right: 0px
+    text-align: center
+
+/* Заголовок второй секции
+
+.slider_sertificates
+  margin-top: 38px
+  padding-left: 260px
+  @media screen and ( max-width: 1440px)
+    padding-left: 60px
+  @media screen and ( max-width: 1024px)
+    margin-top: 40px
+  @media screen and ( max-width: 768px)
+    padding-left: 0px
+  @media screen and ( max-width: 426px)
+    margin-top: 20px
+
+/* Панель управления слайдером
+
+.sliderButtons_certificates
+  display: flex
+  align-items: center
+  margin-bottom: 52px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 40px
+  @media screen and ( max-width: 768px)
+    justify-content: center
+  @media screen and ( max-width: 426px)
+    margin-bottom: 30px
+    justify-content: center
+
+/* Кнопка влево
+
+.leftCertificates
+  height: 60px
+  width: 60px
+  display: block
+  margin-right: 20px
+  border: none
+  border-radius: 50%
+  outline: none
+  background-image: url('../img/svg/secondSection_page5/sliderButtonLeft_default_page5.svg')
+  transition: opacity 0.2s ease-in-out, background-image 0.2s ease-in-out
+
+  &:hover
+    background-image: url('../img/svg/secondSection_page5/sliderButtonLeft_hover_page5.svg')
+    transition: background-image 0.2s ease-in-out
+
+  &:focus
+    outline: none
+
+  &:active
+    background-image: url('../img/svg/secondSection_page5/sliderButtonLeft_active_page5.svg')
+    transition: background-image 0.1s ease-in-out
+
+/* Кнопка вправо
+
+.rightCertificates
+  height: 60px
+  width: 60px
+  display: inline-block
+  margin-right: 25px
+  border: none
+  border-radius: 50%
+  outline: none
+  background-image: url('../img/svg/secondSection_page5/sliderButtonRight_default_page5.svg')
+  transition: opacity 0.2s ease-in-out, background-image 0.2s ease-in-out
+
+  &:hover
+    background-image: url('../img/svg/secondSection_page5/sliderButtonRight_hover_page5.svg')
+    transition: background-image 0.2s ease-in-out
+
+  &:focus
+    outline: none
+
+  &:active
+    background-image: url('../img/svg/secondSection_page5/sliderButtonRight_active_page5.svg')
+    transition: background-image 0.1s ease-in-out
+
+.slick-arrow.slick-disabled
+  opacity: 0.2
+  transition: opacity 0.2s ease-in-out
+
+/* Счетчик
+
+.sliderCounter_certificates
+  display: flex
+
+  span
+    display: block
+    font-style: normal
+    font-weight: bold
+    font-size: 16px
+    line-height: 28px
+    color: #4E4E4E
+
+/* Общие стили для сертификатов
+
+.sertificat_certificates
+  cursor: pointer
+  outline: none
+  border: none
+  transform: scale(1)
+  transition: transform 0.2s ease-in-out
+
+  &:hover
+    transform: scale(1.05) translateY(-25px)
+    transition: transform 0.2s ease-in-out
+
+  @media screen and ( max-width: 478px)
+    padding: 0px 20px
+
+  > img
+    height: 624px
+    @media screen and ( max-width: 768px)
+      display: block
+      margin: 0px auto
+    @media screen and ( max-width: 478px)
+      height: 500px
+    @media screen and ( max-width: 382px)
+      height: 450px
+  
+/* Третья секция. 5 страница. Сертификаты
+
+.sectionThree_certificates
+  display: block
+  width: 100%
+  padding-top: 122px
+  padding-bottom: 120px
+  border-bottom: 2px solid #F0EFEE
+  @media screen and ( max-width: 1024px)
+    padding-top: 0px
+    padding-bottom: 60px
+  @media screen and ( max-width: 426px)
+    padding-bottom: 40px
+
+.thirdSection_certificates
+  display: block
+  width: 100%
+
+  .sectionTitle_index
+    text-align: center
+    @media screen and ( max-width: 376px)
+      font-size: 38px
+
+/* Контент тертьей секции
+
+.seeAll_certificates
+  width: 22.8%
+  margin-left: 40px
+  padding: 206px 114px 206px 20px
+  background-color: #F0EFEE
+  font-style: normal
+  font-weight: bold
+  line-height: 36px
+  color: #010101
+  @media screen and ( max-width: 1024px)
+    text-align: center
+    width: 100%
+    margin-left: 0px
+    padding: 20px
+
+.seeAllLink_sertificates
+  margin-top: 28px
+  display: flex
+  justify-content: flex-start
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  text-decoration: none
+  align-items: center
+  padding-right: 22px
+  @media screen and ( max-width: 1024px)
+    justify-content: center
+    padding-right: 0px
+    margin-top: 10px
+
+  &:hover
+    color: #EC8B33
+
+  &:active
+    color: #CA782E
+
+  &::after
+    content: ""
+    display: block
+    background-image: url('../img/svg/thirdSection_page5/Arrow\ right\ link\ icon_page5.svg')
+    width: 16px
+    height: 16px
+    background-repeat: no-repeat
+    margin-left: 6px
+
+  &:hover:after
+    background-image: url('../img/svg/thirdSection_page5/Arrow_icon_hover_page5.svg')
+
+  &:active:after
+    background-image: url('../img/svg/thirdSection_page5/Arrow_icon_active_page5.svg')
+
+/* ШЕСТАЯ СТРАНИЦА. БЛОГ
+/* Первая секция. 6 страница. Блог по OSB
+
+.sectionOne_osbBlog
+  width: 100%
+  padding-bottom: 118px
+  display: block
+  border-bottom: 2px solid #F0EFEE
+  @media screen and ( max-width: 1025px)
+    padding-bottom: 60px
+  @media screen and ( max-width: 426px)
+    padding-bottom: 40px
+  
+  .sectionTitle_index
+    padding-top: 20px
+    @media screen and ( max-width: 426px)
+      text-align: center
+    @media screen and ( max-width: 376px)
+      font-size: 38px
+
+.firstSection_osbBlog
+  position: relative
+  width: 100%
+  display: block
+
+/* Основной контейнер
+/* Дата 1
+
+.newsDate
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+  margin-bottom: 9px
+
+/* Шаблон блока новости
+
+.blogNews
+  width: 100%
+  display: block
+  margin-top: 52px
+  margin-bottom: 52px
+  @media screen and ( max-width: 1025px)
+    margin-top: 40px
+    margin-top: 40px
+  @media screen and ( max-width: 426px)
+    margin: 20px 0px
+
+  &:last-of-type
+    margin-bottom: 0px
+
+.newsHeadline
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 13px
+
+.newsContent
+  width: 100%
+  margin-bottom: 18px
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 769px)
+    flex-direction: column
+    
+
+.newsDescription
+  width: 31.42%
+  display: block
+  background-color: #F0EFEE
+  position: relative
+  padding-top: 37px
+  padding-left: 20px
+  @media screen and ( max-width: 769px)
+    width: 100%
+    padding-top: 20px
+
+.newsListTitle
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-bottom: 9px
+
+.newsListElement
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #000000
+
+.usersView
+  display: flex
+  align-items: center
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+  margin-top: 183px
+  @media screen and ( max-width: 769px)
+    margin-top: 20px
+    margin-bottom: 20px
+
+  &::before
+    content: ''
+    width: 20px
+    height: 20px
+    background-image: url('../img/svg/firstSection_page6/usersViewIcon_page6.svg')
+    margin-right: 8px
+
+/* Картинка
+
+.newsImg
+  width: 68.60%
+  display: block
+  @media screen and ( max-width: 769px)
+    width: 100%
+
+/* Ссылка первой части
+
+.newsLink
+  display: block
+
+  a
+    display: flex
+    align-items: center
+    text-decoration: none
+    font-style: normal
+    font-weight: bold
+    font-size: 16px
+    line-height: 28px
+    color: #010101
+    transition: color 0.2s ease-in-out
+
+    &:hover
+      color: #EC8B33
+      transition: color 0.2s ease-in-out
+
+    &:active
+      color: #CA782E
+      transition: color 0.1s ease-in-out
+
+    &::after
+      content: ""
+      width: 16px
+      height: 16px
+      display: block
+      margin-left: 12px
+      background-image: url('../img/svg/firstSection_page6/arrowRightIcon_default_page6.svg')
+      transition: background-image 0.2s ease-in-out
+
+    &:hover::after
+      background-image: url('../img/svg/firstSection_page6/arrowRightIcon_hover_page6.svg')
+      transition: background-image 0.2s ease-in-out
+
+    &:active::after
+      background-image: url('../img/svg/firstSection_page6/arrowRightIcon_active_page6.svg')
+      transition: background-image 0.2s ease-in-out
+    @media screen and ( max-width: 426px)
+      justify-content: center
+
+/* СЕДЬМАЯ СТРАНИЦА.
+/* Первая секция. 7 страница. Статьи OSB
+
+.sectionOne_articles
+  width: 100%
+  padding-bottom: 120px
+  display: block
+  border-bottom: 2px solid #F0EFEE
+  @media screen and ( max-width: 1441px)   
+    > .wrapper
+      width: 90%
+  @media screen and ( max-width: 1024px)
+    .sectionTitle_index
+      padding-top: 20px
+      @media screen and ( max-width: 426px)
+        text-align: center
+      @media screen and ( max-width: 376px)
+        font-size: 38px
+        
+  @media screen and ( max-width: 1025px)
+    padding-bottom: 60px
+  @media screen and ( max-width: 426px)
+    padding-bottom: 40px
+
+.firstSection_articles
+  width: 100%
+  display: block
+
+/* Основной контейнер
+/* Описание
+
+.newsPic_articles
+  width: 65.71%
+  margin-top: 50px
+  margin-bottom: 49px
+  @media screen and ( max-width: 1441px)
+    margin: 0px auto
+    margin-top: 50px
+    margin-bottom: 49px
+  @media screen and ( max-width: 1025px)
+    margin: 40px 0px
+    width: 100%
+  @media screen and ( max-width: 426px)
+    margin: 20px 0px
+
+  img
+    width: 100%
+    display: block
+
+.firstSection_articles
+  p
+    width: 65.71%
+    display: block
+    font-style: normal
+    font-weight: normal
+    font-size: 20px
+    line-height: 36px
+    color: #010101
+    @media screen and ( max-width: 1441px)
+      width: 100%
+    @media screen and ( max-width: 426px)
+      br
+        display: none
+
+  b
+    margin-top: 50px
+    margin-bottom: 30px
+    width: 65.71%
+    display: block
+    font-style: normal
+    font-weight: bold
+    font-size: 28px
+    line-height: 36px
+    color: #000000
+    @media screen and ( max-width: 1441px)
+      width: 100%
+    @media screen and ( max-width: 1025px)
+      margin: 40px 0px
+    @media screen and ( max-width: 426px)
+      margin: 20px 0px
+      
+/* Классификация OSB
+
+.contentPic_articles
+  width: 65.71%
+  margin-top: 31px
+  margin-bottom: 20px
+  @media screen and ( max-width: 1441px)
+    margin: 0px auto
+    margin-top: 31px
+    margin-bottom: 20px
+  @media screen and ( max-width: 1025px)
+    width: 100%
+  @media screen and ( max-width: 426px)
+    margin-top: 20px
+
+  img
+    display: block
+    width: 100%
+
+.firstSection_articles p span
+  height: 28.7px
+  width: 40px
+  display: block
+  background-image: url('../img/svg/firstSection_page7/bookIcon_page7.svg')
+  position: absolute
+  top: 22px
+  left: 20px
+  @media screen and ( max-width: 425px)
+    left: 50%
+    transform: translateX(-50%)
+  
+
+.note_articles
+  width: 65.71%
+  background-color: #F0EFEE
+  padding: 18px 20px 18px 80px
+  position: relative
+  @media screen and ( max-width: 1441px)
+    margin: 0px auto
+  @media screen and ( max-width: 1025px)
+    width: 100%
+  @media screen and ( max-width: 426px)
+    padding-left: 20px
+    padding-top: 60px
+
+  p
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 28px
+    color: #4E4E4E
+    width: 100%
+
+.whyThisBenefits_articles
+  width: 52.42%
+  display: block
+  position: relative
+  margin-top: 31px
+  margin-bottom: 31px
+  padding-left: 97px
+  @media screen and ( max-width: 1441px)
+    margin: 0px auto
+    margin-top: 31px
+    margin-bottom: 31px
+    padding-left: 0px
+  @media screen and ( max-width: 1025px)
+    width: 80%
+  @media screen and ( max-width: 769px)
+    width: 100%
+  @media screen and ( max-width: 376px)
+    display: none
+
+.benefitsIcon_articles
+  width: 100%
+  display: flex
+  background-color: inherit
+  flex-wrap: nowrap
+  justify-content: space-between
+  align-items: center
+
+.benefit_articles
+  width: 120px
+  height: 120px
+  border-radius: 50%
+  background-color: #F0EFEE
+  display: block
+  background-position: center center
+  background-repeat: no-repeat
+
+  &:first-of-type
+    background-image: url('../img/svg/firstSection_page7/benefit1_page7.svg')
+
+  &:nth-of-type(2)
+    background-image: url('../img/svg/firstSection_page7/benefit2_page7.svg')
+
+  &:nth-of-type(3)
+    background-image: url('../img/svg/firstSection_page7/benefit3_page7.svg')
+  @media screen and ( max-width: 596px)
+    width: 60px
+    height: 60px
+
+.line_articles
+  width: 80px
+  height: 2px
+  display: block
+  background-color: #F0EFEE
+
+.whyThisBenefitsName_articles
+  width: 100%
+  display: flex
+  justify-content: space-between
+  padding-top: 10px
+
+  span
+    font-style: normal
+    font-weight: bold
+    font-size: 16px
+    line-height: 28px
+    color: #000000
+    @media screen and ( max-width: 596px)
+      flex: 1 1 30%
+      text-align: center
+      margin-top: 0 1%
+
+/* Секция карточки продукта
+
+.materialCard_articles
+  width: 100%
+  margin-top: 43px
+  @media screen and ( max-width: 1441px)
+    > .productCards
+      width: 100%
+
+      .productCard
+        width: 100%
+
+        .productPic
+          img
+            margin: 0px auto
+        .productDescription
+          text-align: center
+        .materialSizeVariation
+          justify-content: center
+          margin-bottom: 10px
+        .materialInStock
+          justify-content: center
+  @media screen and ( max-width: 1025px)
+    margin-top: 40px
+  @media screen and ( max-width: 426px)
+    margin-top: 20px
+
+/* Картинка раздела "Почему выбираем OSB-3"
+
+.firstSection_articles img:nth-of-type(3)
+  display: block
+  width: 65.71%
+  margin-bottom: 31px
+
+.constructionImg_articles
+  margin-top: 51px
+  @media screen and ( max-width: 1441px)
+    margin: 0px auto
+    display: block
+    margin-top: 51px
+  @media screen and ( max-width: 1025px)
+    margin-top: 40px
+  @media screen and ( max-width: 426px)
+    margin-top: 20px
+
+.firstSection_articles .readAlso_articles
+  padding-top: 118px
+  padding-bottom: 49px
+  font-style: normal
+  font-weight: bold
+  font-size: 28px
+  line-height: 36px
+  color: #999999
+  @media screen and ( max-width: 1025px)
+    padding-top: 40px
+    padding-bottom: 0px
+  @media screen and ( max-width: 426px)
+    padding-top: 20px
+
+/* Кнопка скролинга вверх
+
+.up-button_articles
+  position: fixed
+  z-index: 10
+  padding: 0
+  bottom: 100px
+  right: 100px
+  transform: translateY(-250px)
+  outline: none
+  width: 64px
+  height: 64px
+  font-size: 36px
+  font-weight: bold
+  text-align: center
+  vertical-align: middle
+  border: 5px solid rgba(59, 54, 54, 0.6)
+  border-radius: 50%
+  display: inline-block
+  cursor: pointer
+  opacity: 0
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out
+
+  &:hover
+    background-color: rgba(59, 54, 54, 0.3)
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out
+
+  &:active
+    background-color: inherit
+    transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out, background-color 0.1s ease-in-out
+
+.shown_articles
+  opacity: 0.8
+  transform: translateY(0px)
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out
+
+/* ВОСЬМАЯ СТРАНИЦА. КОНТАКТЫ
+/* Первая секция. 8 страница. Контакты
+
+.sectionOne_contacts
+  width: 100%
+  padding-bottom: 120px
+  display: block
+  border-bottom: 2px solid #F0EFEE
+  @media screen and ( max-width: 1024px)
+    padding-bottom: 60px
+  @media screen and ( max-width: 425px)
+    padding-bottom: 40px
+
+.firstSection_contacts
+  position: relative
+  width: 100%
+  display: block
+  @media screen and ( max-width: 1024px)
+    > .sectionTitle_index
+      padding-top: 40px
+      @media screen and ( max-width: 425px)
+        padding-top: 0px
+
+/* Основной контент
+
+.mainContent_contacts
+  width: 100%
+  display: flex
+  justify-content: space-between
+  margin-top: 42px
+  margin-bottom: 120px
+  @media screen and ( max-width: 1024px)
+    margin-bottom: 0px
+  @media screen and ( max-width: 872px)
+    flex-direction: column
+  @media screen and ( max-width: 425px)
+    margin-top: 20px
+
+/* 1 часть контента
+
+.mainContentPart1_contacts
+  width: 42.85%
+  padding-top: 96px
+  padding-bottom: 95px
+  display: block
+  @media screen and ( max-width: 1024px)
+    padding-top: 0px
+    padding-bottom: 0px
+  @media screen and ( max-width: 872px)
+    width: 100%
+    margin-bottom: 40px
+
+  .contactsForm_contacts
+    width: (440px * 100%) / 600px
+    position: relative
+    z-index: 1
+    @media screen and ( max-width: 425px)
+      width: 100%
+
+/* Выбор города
+
+#city_contacts
+  display: block
+  width: 100% 
+  height: 60px
+  background-color: #F0EFEE
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  border: none
+  border-radius: 4px
+  padding-top: 30px
+  padding-left: 20px
+  outline: none
+  margin-bottom: 41px
+  transition: background-color 0.2s ease-in-out
+
+  &:hover
+    border: 2px solid #EC8B33
+    background-color: #F0EFEE
+    transition: background-color 0.2s ease-in-out
+
+  &:active
+    border-color: none
+    background-color: #F0EFEE
+    transition: background-color 0.2s ease-in-out
+  
+  @media screen and ( max-width: 425px)
+    margin-bottom: 0px
+
+.placeholder1_contacts
+  display: block
+  position: absolute
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #4E4E4E
+  height: 36px
+  width: 180px
+  top: 10px
+  left: 20px
+  transition: all 0.2s ease-in-out
+  cursor: text
+  transform-origin: top left
+
+/* Кнопка обнуления поля
+
+.resetCity_contacts
+  width: 12px
+  height: 12px
+  position: absolute
+  right: 20px
+  top: 25px
+  background-image: url('../img/svg/firstSection_page8/closeButton_page8.svg')
+  border: none
+  outline: none
+  transform: scale(1)
+  transition: all 0.2s ease-in-out
+  border-radius: 50%
+  opacity: 0
+  display: block
+
+.shown_contacts
+  opacity: 1
+  transition: all 0.2s ease-in-out
+
+.moveCityText_contacts
+  transform: translateY(-10px) scale(0.8)
+  transition: all 0.2s ease-in-out
+  transform-origin: top left
+
+.resetCity_contacts
+  &:hover
+    transform: scale(1.5)
+    transition: all 0.2s ease-in-out
+
+  &:active
+    transform: scale(1.8)
+    transition: all 0.2s ease-in-out
+
+  
+  &:focus
+    outline: none
+
+/* Почта Mottex
+
+.mottexMail_contacts
+  width: 100%
+  margin-bottom: 40px
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+
+.mottexMailText1_contacts
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+
+.mottexMailText2_contacts
+  width: 100%
+  padding-left: 0px
+  position: relative
+  outline: none
+  border: none
+  background-color: #FFFFFF
+  text-align: left
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  transition: color 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+/* Телефон Mottex
+
+.mottexPhone_contacts
+  width: 100%
+  margin-bottom: 40px
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+
+.mottexPhoneText1_contacts
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+
+/* Кнопка номера телефона
+
+.mottexPhoneText2_contacts
+  width: 100%
+  text-align: left
+  outline: none
+  border: none
+  background-color: inherit
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  text-decoration: underline
+  color: #010101
+  transition: color 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+  &:focus
+    outline: none
+
+/* Адрес Mottex
+
+.mottexAdress_contacts
+  width: 100%
+
+.mottexAdressText1_contacts
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+
+.mottexAdressText2_contacts
+  width: 100%
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+
+/* 2 часть контента
+
+.mainContentPart2_contacts
+  width: 57.14%
+  display: block
+  @media screen and ( max-width: 872px)
+    width: 100%
+
+.sectionOne_contacts .wrapper .firstSection_contacts .mainContent_contacts .mainContentPart2_contacts img
+  width: 100%
+  display: block
+
+/* ДЕВЯТАЯ СТРАНИЦА. КОРЗИНА. 1 ЭТАП
+/* Первая секция. 9 страница. Корзина 1 этап
+
+.sectionOne_shopBasketFirstStep
+  width: 100%
+  padding-bottom: 120px
+  border-bottom: 2px solid #F0EFEE
+  @media screen and ( max-width: 1025px)
+    padding-bottom: 60px
+  @media screen and ( max-width: 426px)
+    padding-bottom: 40px
+
+  .wrapper
+    width: 90%
+
+.firstSection_shopBasketFirstStep
+  width: 100%
+  .sectionTitle_index
+    @media screen and ( max-width: 588px)
+      text-align: center
+    @media screen and ( max-width: 426px)
+      padding-top: 0px
+    @media screen and ( max-width: 376px)
+      font-size: 38px
+      
+/* Основной контейнер
+/* Основной контент
+
+.mainContent_shopBasketFirstStep
+  width: 100%
+  margin-top: 50px
+  @media screen and ( max-width: 1025px)
+    margin-top: 40px
+
+/* Этапы покупки
+
+.stages_shopBasketFirstStep
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 61.3%
+  margin-bottom: 49px
+  @media screen and ( max-width: 1025px)
+    margin-bottom: 40px
+    width: 100%
+  @media screen and ( max-width: 588px)
+    flex-wrap: wrap
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+/* 1 этап
+
+.productVerify_shopBasketFirstStep
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  flex: 1 1 30%
+  @media screen and ( max-width: 768px)
+    flex-direction: column
+    align-items: center
+  @media screen and ( max-width: 588px)
+    flex-basis: 50%
+
+.stageNumber1_shopBasketFirstStep
+  display: flex
+  width: 60px
+  height: 60px
+  align-items: center
+  justify-content: center
+  border-radius: 50%
+  border: 2px solid #010101
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  margin-right: 12px
+  @media screen and ( max-width: 768px)
+    margin-right: 0px
+
+.stageText1_shopBasketFirstStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+
+/* 2 этап
+
+.delivery_shopBasketFirstStep
+  display: flex
+  align-items: center
+  flex: 1 1 30%
+  flex-wrap: wrap
+  justify-content: center
+  @media screen and ( max-width: 588px)
+    flex-basis: 50%
+    flex-direction: column
+
+.stageNumber2_shopBasketFirstStep
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+  background-color: #F0EFEE
+  margin-right: 12px
+  @media screen and ( max-width: 768px)
+    margin-right: 0px
+
+.stageText2_shopBasketFirstStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+
+/* 3 этап
+
+.verify_shopBasketFirstStep
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  flex: 1 1 30%
+  justify-content: flex-end
+  @media screen and ( max-width: 768px)
+    flex-direction: column
+    align-items: center
+  @media screen and ( max-width: 588px)
+    flex-basis: 100%
+    margin-top: 10px
+
+.stageNumber3_shopBasketFirstStep
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+  background-color: #F0EFEE
+  margin-right: 12px
+  @media screen and ( max-width: 768px)
+    margin-right: 0px
+
+.stageText3_shopBasketFirstStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+
+/* Разделительные линии
+
+.line1_shopBasketFirstStep, .line2_shopBasketFirstStep
+  height: 2px
+  width: 40px
+  background-color: #C3BDB9
+  margin: 0 1%
+  @media screen and ( max-width: 588px)
+    display: none
+
+/* Контейнер с контентом
+
+.mainContentParts_shopBasketFirstStep
+  display: flex
+  width: 100%
+  margin-bottom: 42px
+  @media screen and ( max-width: 972px)
+    flex-direction: column-reverse
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+/* 1 часть контента
+
+.mainContentPart1_shopBasketFirstStep
+  width: 74.3%
+  padding-right: 40px
+  border-right: 2px solid #F0EFEE
+  @media screen and ( max-width: 1440px)
+    padding-right: 20px
+  @media screen and ( max-width: 1238px)
+    width: 80%
+  @media screen and ( max-width: 972px)
+    width: 100%
+    padding-right: 0px
+    border-right: none
+
+/* Заголовок таблицы
+
+.part1Headline_shopBasketFirstStep
+  display: flex
+  width: 100%
+  padding-bottom: 19px
+  border-bottom: 2px solid #F0EFEE
+
+.headlineProduct_shopBasketFirstStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-right: auto
+  @media screen and ( max-width: 687px)
+    margin: 0px auto
+
+.headlinePrice_shopBasketFirstStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-right: 49px
+  @media screen and ( max-width: 687px)
+    display: none
+
+.headlineQuantity_shopBasketFirstStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-right: 98px
+  @media screen and ( max-width: 687px)
+    display: none
+
+.headlineTotal_shopBasketFirstStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  @media screen and ( max-width: 687px)
+    display: none
+
+/* Таблица
+
+.OSBShoppingBasket_shopBasketFirstStep
+  width: 100%
+
+/* Содержимое таблицы
+
+.purchasePart1_shopBasketFirstStep
+  display: flex
+  width: 60%
+  @media screen and ( max-width: 1440px)
+    flex: 1 1 50%
+  @media screen and ( max-width: 768px)
+    flex: 1 1 40%
+  @media screen and ( max-width: 687px)
+    width: 100%
+    justify-content: center
+
+.purchasePart2_shopBasketFirstStep
+  display: flex
+  width: 40%
+  padding-right: 153px
+  position: relative
+  justify-content: flex-end
+  @media screen and ( max-width: 1440px)
+    flex: 2 2 50%
+  @media screen and ( max-width: 768px)
+    flex: 1 1 60%
+  @media screen and ( max-width: 687px)
+    width: 100%
+    flex-direction: column
+    padding-right: 0px
+
+/* Заказ
+
+.purchase_shopBasketFirstStep
+  width: 100%
+  display: flex
+  justify-content: space-between
+  border-bottom: 2px solid #F0EFEE
+  align-items: flex-start
+  padding-top: 42px
+  padding-bottom: 52px
+  @media screen and ( max-width: 687px)
+    flex-direction: column
+    position: relative
+  @media screen and ( max-width: 426px)
+    padding-top: 20px
+
+/* Ячейка с изображением материала
+
+.materialImg_shopBasketFirstStep
+  width: 140px
+  margin-right: 60px
+  @media screen and ( max-width: 1440px)
+    margin-right: 20px
+  @media screen and ( max-width: 768px)
+    display: none
+
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: contain
+
+/* Ячейка с описанием материала
+
+.materialDescription_shopBasketFirstStep
+  display: block
+  // width: 320px
+  align-self: flex-end
+
+.descriptionText1Cell_shopBasketFirstStep
+  display: block
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 17px
+  @media screen and ( max-width: 687px)
+    margin-bottom: 0px
+  @media screen and ( max-width: 426px)
+    text-align: center
+
+/* Кнопка удаления строки
+
+.deleteButton_shopBasketFirstStep
+  width: 100%
+  display: flex
+  align-items: center
+  padding: 0px
+  background-color: inherit
+  border: none
+  outline: none
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 16px
+  color: #999999
+  transition: color 0.2s ease-in-out
+
+  &::before
+    content: ""
+    display: block
+    background-image: url('../img/svg/firstSection_page9/Close_button_default_page9.svg')
+    height: 12px
+    width: 12px
+    margin-right: 8px
+    transition: color 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.2s ease-in-out
+  
+  &:focus
+    outline: none
+
+  &:hover::before
+    background-image: url('../img/svg/firstSection_page9/Close_button_hover_page9.svg')
+    transition: background-image 0.2s ease-in-out
+
+  &:active::before
+    background-image: url('../img/svg/firstSection_page9/Close_button_active_page9.svg')
+    transition: background-image 0.2s ease-in-out
+
+  @media screen and ( max-width: 687px)
+    width: auto
+    position: absolute
+    bottom: 20px
+    left: 50%
+    transform: translateX(-50%)
+
+/* Ячейка с ценой
+
+.materialPrice1_shopBasketFirstStep
+  display: block
+  padding-top: 33px
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  @media screen and ( max-width: 1440px)
+    white-space: nowrap
+  @media screen and ( max-width: 687px)
+    text-align: center
+    padding-top: 10px
+  
+
+/* Кнопка "кол-во единиц"
+
+.productCounter_shopBasketFirstStep
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-top: 20px
+  margin-left: 40px
+  width: 120px
+  height: 60px
+  background-color: inherit
+  border: 2px solid #BFBFBF
+  border-radius: 4px
+  position: relative
+  @media screen and ( max-width: 1440px)
+    margin-left: 10px
+    min-width: 100px
+  @media screen and ( max-width: 972px)
+    margin-left: 20px
+  @media screen and ( max-width: 687px)
+    margin: 0px auto
+    width: 120px 
+    margin-top: 10px
+
+/* Кнопка минус
+
+.calculatorMinus_shopBasketFirstStep
+  width: 8px
+  height: 36px
+  border: none
+  outline: none
+  font-style: normal
+  font-weight: normal
+  font-size: 27px
+  line-height: 36px
+  color: #010101
+  position: absolute
+  left: 5px
+  z-index: 100
+  background-color: inherit
+  user-select: none
+  transition: all 0.2s ease-in-out
+  text-decoration: none
+
+.buttonDisabled_shopBasketFirstStep
+  opacity: 0.2 !important
+  transition: opacity 0.2s ease-in-out
+
+.calculatorMinus_shopBasketFirstStep
+  &:hover
+    color: #EC8B33
+
+  &:active
+    color: #CA782E
+
+  &:focus
+    outline: none
+
+/* Счетчик
+
+.calculatorNumber_shopBasketFirstStep
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 27px
+  line-height: 36px
+  color: #010101
+  width: 100%
+  text-align: center
+  border: none
+
+  &:focus
+    outline: none
+
+/* Убираем дефолтные стрелки
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none
+  margin: 0
+
+/* Кнопка плюс
+
+.calculatorPlus_shopBasketFirstStep
+  width: 12px
+  height: 36px
+  border: none
+  outline: none
+  font-style: normal
+  font-weight: normal
+  font-size: 27px
+  line-height: 36px
+  color: #010101
+  background-color: inherit
+  position: absolute
+  right: 9px
+  top: 8px
+  z-index: 100
+  user-select: none
+  text-decoration: none
+
+  &:hover
+    color: #EC8B33
+
+  &:active
+    color: #CA782E
+
+  &:focus
+    outline: none
+
+/* Ячейка с суммой
+
+.materialSum_shopBasketFirstStep
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  padding-top: 33px
+  position: absolute
+  right: 0px
+  @media screen and ( max-width: 687px)
+    position: static
+    width: 100%
+    padding-top: 10px
+    text-align: center
+
+/* 2 часть контента
+
+.mainContentPart2_shopBasketFirstStep
+  width: 25.7%
+  padding-left: 40px
+  @media screen and ( max-width: 1440px)
+    padding-left: 20px
+  @media screen and ( max-width: 1237px)
+    width: 20%
+  @media screen and ( max-width: 972px)
+    flex-wrap: wrap
+    width: 100%
+    padding-left: 0px
+    margin-bottom: 40px
+    display: flex
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+.part2Title_shopBasketFirstStep
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 4px
+  @media screen and ( max-width: 972px)
+    flex: 1 1 55%
+    text-align: right
+    padding-right: 20px
+  @media screen and ( max-width: 376px)
+    flex-basis: 100%
+    padding-right: 0px
+    text-align: center
+
+.part2Sum_shopBasketFirstStep
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 5px
+  @media screen and ( max-width: 972px)
+    flex: 1 1 45%
+    text-align: left
+  @media screen and ( max-width: 426px)
+    flex-basis: 30%
+  @media screen and ( max-width: 376px)
+    text-align: center
+
+.additionalInformation_shopBasketFirstStep
+  @media screen and ( max-width: 972px)
+    flex-basis: 100%
+    text-align: center
+    margin-bottom: 20px
+
+.nextStageLink_shopBasketFirstStep
+  width: 100%
+  display: block
+  text-align: center
+  border-radius: 4px
+  padding-top: 13px
+  padding-bottom: 13px
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  text-decoration: none
+  color: #010101
+  background-color: #EC8B33
+  border-radius: 4px
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out
+  margin-top: 22px
+
+  &:hover
+    color: #EC8B33
+    background-color: #010101
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    background-color: #010101
+    transition: color 0.1s ease-in-out
+  @media screen and ( max-width: 972px)
+    width: 300px
+    margin: 0px auto
+
+/* Кнопка обновления корзины
+
+.refreshButton_shopBasketFirstStep
+  width: 320px
+  padding-top: 13px
+  padding-bottom: 13px
+  background-color: inherit
+  border-radius: 4px
+  border: 2px solid #EC8B33
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  text-align: center
+  outline: none
+  transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    border-color: #010101
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+  @media screen and ( max-width: 972px)
+    margin: 0px auto
+  @media screen and ( max-width: 376px)
+    width: 100%
+
+/* ДЕСЯТАЯ СТРАНИЦА. КОРЗИНА. 2 ЭТАП
+/* Первая секция. 10 страница. Корзина 2 этап
+
+.sectionOne_shopBasketSecondStep
+  width: 100%
+  padding-bottom: 120px
+  border-bottom: 2px solid #F0EFEE
+  @media screen and ( max-width: 1025px)
+    padding-bottom: 60px
+  @media screen and ( max-width: 426px)
+    padding-bottom: 40px
+
+  .wrapper
+    width: 90%
+
+.firstSection_shopBasketSecondStep
+  width: 100%
+  .sectionTitle_index
+    @media screen and ( max-width: 588px)
+      text-align: center
+    @media screen and ( max-width: 426px)
+      padding-top: 0px
+    @media screen and ( max-width: 376px)
+      font-size: 38px
+
+/* Основной контейнер
+/* Основной контент
+
+.mainContent_shopBasketSecondStep
+  width: 100%
+  margin-top: 50px
+  @media screen and ( max-width: 1025px)
+    margin-top: 40px
+
+/* Этапы покупки
+
+.stages_shopBasketSecondStep
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 61.3%
+  margin-bottom: 49px
+  @media screen and ( max-width: 1025px)
+    margin-bottom: 40px
+    width: 100%
+  @media screen and ( max-width: 588px)
+    flex-wrap: wrap
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+/* 1 этап
+
+.productVerify_shopBasketSecondStep
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  flex: 1 1 30%
+  text-decoration: none
+  @media screen and ( max-width: 768px)
+    flex-direction: column
+    align-items: center
+  @media screen and ( max-width: 588px)
+    flex-basis: 50%
+
+.stageNumber1_shopBasketSecondStep
+  display: flex
+  width: 60px
+  height: 60px
+  align-items: center
+  justify-content: center
+  border-radius: 50%
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  background-color: #010101
+  color: #FFFFFF
+  transition: background-color 0.2s ease-in-out
+  margin-right: 12px
+  text-decoration: none
+  @media screen and ( max-width: 768px)
+    margin-right: 0px
+
+.stageText1_shopBasketSecondStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+  text-decoration: none
+  text-align: center
+
+.productVerify_shopBasketSecondStep
+  &:hover
+    .stageNumber1_shopBasketSecondStep
+      background-color: #EC8B33
+      transition: background-color 0.2s ease-in-out
+
+    .stageText1_shopBasketSecondStep
+      color: #EC8B33
+      transition: color 0.2s ease-in-out
+
+  &:active
+    .stageNumber1_shopBasketSecondStep
+      background-color: #CA782E
+      transition: background-color 0.1s ease-in-out
+
+    .stageText1_shopBasketSecondStep
+      color: #CA782E
+      transition: color 0.1s ease-in-out
+
+/* 2 этап
+
+.delivery_shopBasketSecondStep
+  display: flex
+  align-items: center
+  flex: 1 1 30%
+  flex-wrap: wrap
+  justify-content: center
+  @media screen and ( max-width: 588px)
+    flex-basis: 50%
+    flex-direction: column
+
+.stageNumber2_shopBasketSecondStep
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  background-color: #FFFFFF
+  border: 2px solid #010101
+  margin-right: 12px
+  @media screen and ( max-width: 768px)
+    margin-right: 0px
+
+.stageText2_shopBasketSecondStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  text-align: center
+    
+
+/* 3 этап
+
+.verify_shopBasketSecondStep
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  flex: 1 1 30%
+  justify-content: flex-end
+  @media screen and ( max-width: 768px)
+    flex-direction: column
+    align-items: center
+  @media screen and ( max-width: 588px)
+    flex-basis: 100%
+    margin-top: 10px
+
+.stageNumber3_shopBasketSecondStep
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  border-radius: none
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+  background-color: #F0EFEE
+  margin-right: 12px
+  @media screen and ( max-width: 768px)
+    margin-right: 0px
+
+.stageText3_shopBasketSecondStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+
+/* Разделительные линии
+
+.line1_shopBasketSecondStep, .line2_shopBasketSecondStep
+  height: 2px
+  width: 40px
+  display: block
+  background-color: #C3BDB9
+  margin-right: 40px
+  @media screen and ( max-width: 588px)
+    display: none
+
+/* Контейнер с контентом
+
+.mainContentParts_shopBasketSecondStep
+  display: flex
+  width: 100%
+  margin-bottom: 42px
+  @media screen and ( max-width: 972px)
+    flex-direction: column-reverse
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+/* 1 часть контента
+
+.mainContentPart1_shopBasketSecondStep
+  width: 74.3%
+  padding-right: 40px
+  border-right: 2px solid #F0EFEE
+  @media screen and ( max-width: 1440px)
+    padding-right: 20px
+  @media screen and ( max-width: 1238px)
+    width: 80%
+  @media screen and ( max-width: 972px)
+    width: 100%
+    padding-right: 0px
+    border-right: none
+
+/* Заголовок таблицы
+
+.part1Headline_shopBasketSecondStep
+  display: flex
+  width: 100%
+  padding-bottom: 19px
+  border-bottom: 2px solid #F0EFEE
+
+.headlineProduct_shopBasketSecondStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-right: auto
+  @media screen and ( max-width: 687px)
+    margin: 0px auto
+
+.headlinePrice_shopBasketSecondStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-right: 49px
+  @media screen and ( max-width: 687px)
+    display: none
+
+.headlineQuantity_shopBasketSecondStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-right: 98px
+  @media screen and ( max-width: 687px)
+    display: none
+
+.headlineTotal_shopBasketSecondStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  @media screen and ( max-width: 687px)
+    display: none
+
+/* Таблица
+
+.OSBShoppingBasket_shopBasketSecondStep
+  width: 100%
+
+/* Содержимое таблицы
+
+.purchasePart1_shopBasketSecondStep
+  display: flex
+  width: 60%
+
+.purchasePart2_shopBasketSecondStep
+  display: flex
+  width: 40%
+  padding-right: 153px
+  position: relative
+  justify-content: flex-end
+
+/* 2 часть контента
+
+.mainContentPart2_shopBasketSecondStep
+  width: 25.7%
+  padding-left: 40px
+  @media screen and ( max-width: 1440px)
+    padding-left: 20px
+  @media screen and ( max-width: 1237px)
+    width: 20%
+  @media screen and ( max-width: 972px)
+    flex-wrap: wrap
+    width: 100%
+    padding-left: 0px
+    margin-bottom: 40px
+    display: flex
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+.part2Title_shopBasketSecondStep
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 4px
+  @media screen and ( max-width: 972px)
+    flex: 1 1 55%
+    text-align: right
+    padding-right: 20px
+  @media screen and ( max-width: 376px)
+    flex-basis: 100%
+    padding-right: 0px
+    text-align: center
+
+.part2Sum_shopBasketSecondStep
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 5px
+  @media screen and ( max-width: 972px)
+    flex: 1 1 45%
+    text-align: left
+  @media screen and ( max-width: 426px)
+    flex-basis: 30%
+  @media screen and ( max-width: 376px)
+    text-align: center
+
+.additionalInformation_shopBasketSecondStep
+  display: block
+  width: 100%
+  @media screen and ( max-width: 972px)
+    text-align: center
+    margin-bottom: 20px
+
+.totalWeight_shopBasketSecondStep
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-bottom: 4px
+  @media screen and ( max-width: 972px)
+    flex: 1 1 55%
+    text-align: right
+    padding-right: 20px
+
+.totalWeightQuantity_shopBasketSecondStep
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-bottom: 39px
+  @media screen and ( max-width: 972px)
+    flex: 1 1 45%
+    text-align: left
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+/* Кнопка далее
+
+.btnNext_shopBasketSecondStep
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  padding-top: 13px
+  padding-bottom: 13px
+  line-height: 36px
+  color: #010101
+  outline: none
+  border: none
+  border-radius: 4px
+  background-color: #EC8B33
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    background-color: #010101
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    background-color: #010101
+    transition: color 0.1s ease-in-out
+  @media screen and ( max-width: 972px)
+    width: 300px
+    margin: 0px auto
+
+/* Кнопка обновления корзины
+
+.refreshButton_shopBasketSecondStep
+  width: 320px
+  padding-top: 13px
+  padding-bottom: 13px
+  background-color: inherit
+  border-radius: 4px
+  border: 2px solid #EC8B33
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  text-align: center
+  outline: none
+  transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    border-color: #010101
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+  @media screen and ( max-width: 972px)
+    margin: 0px auto
+  @media screen and ( max-width: 376px)
+    width: 100%
+
+/* Вторая секция. 10 страница. Корзина 2 этап
+
+.link1_page1
+  color: #EC8B33
+  text-decoration: underline
+  transition: color 0.1s ease-in-out
+
+  &:hover
+    color: #010101
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+.text2_1_page1
+  margin: 0px auto
+  margin-top: 41px
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  text-align: center
+  color: #EC8B33
+
+.text2_2_page1
+  margin: 0px auto
+  margin-top: 21px
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  text-align: center
+
+.link2_page1
+  color: #EC8B33
+  text-decoration: underline
+  transition: color 0.1s ease-in-out
+
+  &:hover
+    color: #010101
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+.text3_1_page1
+  margin: 0px auto
+  margin-top: 41px
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  text-align: center
+  color: #EC8B33
+
+.text3_2_page1
+  margin: 0px auto
+  margin-top: 21px
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 34px
+  color: #010101
+  text-align: center
+
+.link3_page1
+  color: #EC8B33
+  text-decoration: underline
+  transition: color 0.1s ease-in-out
+
+  &:hover
+    color: #010101
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+/* ОДИННАДЦАТАЯ СТРАНИЦА. КОРЗИНА. 3 ЭТАП
+/* Первая секция. 11 страница. Корзина 3 этап
+
+.sectionOne_shopBasketThirdStep
+  width: 100%
+  padding-bottom: 120px
+  border-bottom: 2px solid #F0EFEE
+  @media screen and ( max-width: 1025px)
+    padding-bottom: 60px
+  @media screen and ( max-width: 426px)
+    padding-bottom: 40px
+
+  .wrapper
+    width: 90%
+
+.firstSection_shopBasketThirdStep
+  width: 100%
+  .sectionTitle_index
+    @media screen and ( max-width: 588px)
+      text-align: center
+    @media screen and ( max-width: 426px)
+      padding-top: 0px
+    @media screen and ( max-width: 376px)
+      font-size: 38px
+
+/* Основной контейнер
+/* Основной контент
+
+.mainContent_shopBasketThirdStep
+  width: 100%
+  margin-top: 50px
+  @media screen and ( max-width: 1025px)
+    margin-top: 40px
+  @media screen and ( max-width: 426px)
+    margin-top: 20px
+
+/* Этапы покупки
+
+.stages_shopBasketThirdStep
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 61.3%
+  margin-bottom: 49px
+  @media screen and ( max-width: 1025px)
+    margin-bottom: 40px
+    width: 100%
+  @media screen and ( max-width: 588px)
+    flex-wrap: wrap
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+/* 1 этап
+
+.productVerify_shopBasketThirdStep
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  flex: 1 1 30%
+  text-decoration: none
+  @media screen and ( max-width: 768px)
+    flex-direction: column
+    align-items: center
+  @media screen and ( max-width: 588px)
+    flex-basis: 50%
+
+.stageNumber1_shopBasketThirdStep
+  display: flex
+  width: 60px
+  height: 60px
+  align-items: center
+  justify-content: center
+  border-radius: 50%
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  background-color: #010101
+  color: #FFFFFF
+  transition: background-color 0.2s ease-in-out
+  margin-right: 12px
+  text-decoration: none
+  @media screen and ( max-width: 768px)
+    margin-right: 0px
+
+.stageText1_shopBasketThirdStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+  text-decoration: none
+  text-align: center
+
+.productVerify_shopBasketThirdStep
+  &:hover
+    .stageNumber1_shopBasketThirdStep
+      background-color: #EC8B33
+      transition: background-color 0.2s ease-in-out
+
+    .stageText1_shopBasketThirdStep
+      color: #EC8B33
+      transition: color 0.2s ease-in-out
+
+  &:active
+    .stageNumber1_shopBasketThirdStep
+      background-color: #CA782E
+      transition: background-color 0.1s ease-in-out
+
+    .stageText1_shopBasketThirdStep
+      color: #CA782E
+      transition: color 0.1s ease-in-out
+
+/* 2 этап
+
+.delivery_shopBasketThirdStep
+  display: flex
+  align-items: center
+  flex: 1 1 30%
+  flex-wrap: wrap
+  justify-content: center
+  @media screen and ( max-width: 588px)
+    flex-basis: 50%
+    flex-direction: column
+
+.stageNumber2_shopBasketThirdStep
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  background-color: #FFFFFF
+  border: 2px solid #010101
+  margin-right: 12px
+  @media screen and ( max-width: 768px)
+    margin-right: 0px
+
+.stageText2_shopBasketThirdStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+  text-align: center
+
+/* 3 этап
+
+.verify_shopBasketThirdStep
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  flex: 1 1 30%
+  justify-content: flex-end
+  @media screen and ( max-width: 768px)
+    flex-direction: column
+    align-items: center
+  @media screen and ( max-width: 588px)
+    flex-basis: 100%
+    margin-top: 10px
+
+.stageNumber3_shopBasketThirdStep
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  border-radius: none
+  font-style: normal
+  font-weight: bold
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+  background-color: #F0EFEE
+  margin-right: 12px
+  @media screen and ( max-width: 768px)
+    margin-right: 0px
+
+.stageText3_shopBasketThirdStep
+  display: block
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #999999
+
+/* Разделительные линии
+
+.line1_shopBasketThirdStep, .line2_shopBasketThirdStep
+  height: 2px
+  width: 40px
+  display: block
+  background-color: #C3BDB9
+  margin-right: 40px
+  @media screen and ( max-width: 588px)
+    display: none
+
+/* Контейнер с контентом
+
+.mainContentParts_shopBasketThirdStep
+  display: flex
+  width: 100%
+  margin-bottom: 42px
+  @media screen and ( max-width: 972px)
+    flex-direction: column-reverse
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+/* 1 часть контента
+
+.mainContentPart1_shopBasketThirdStep
+  width: 74.3%
+  padding-right: 40px
+  border-right: 2px solid #F0EFEE
+  @media screen and ( max-width: 1440px)
+    padding-right: 20px
+  @media screen and ( max-width: 1238px)
+    width: 80%
+  @media screen and ( max-width: 972px)
+    width: 100%
+    padding-right: 0px
+    border-right: none
+
+/* Заголовок
+
+.fromHeadline_shopBasketThirdStep
+  font-style: normal
+  font-weight: bold
+  font-size: 48px
+  line-height: 60px
+  margin-bottom: 40px
+  @media screen and ( max-width: 426px)
+    text-align: center
+    margin-bottom: 20px
+  @media screen and ( max-width: 376px)
+    font-size: 38px
+
+.dataField_shopBasketThirdStep
+  width: 100%
+  display: block
+  background-color: #F0EFEE
+  border: none
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  padding: 13px 0px 11px 20px
+  margin-bottom: 40px
+  border-radius: 4px
+
+  &:hover
+    border: none
+    outline: none
+
+  &:focus
+    border: none
+    outline: none
+
+  &:active
+    border: none
+    outline: 
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+.deliveryOption_shopBasketThirdStep
+  margin-bottom: 40px
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+.deliveryMarker_shopBasketThirdStep
+  opacity: 0
+  z-index: -100
+  position: absolute
+
+.deliveryLabel_shopBasketThirdStep
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 28px
+  color: #010101
+
+.deliveryMarker_shopBasketThirdStep+label
+  user-select: none
+  display: flex
+  align-items: center
+
+.deliveryMarker_shopBasketThirdStep+label::before
+  content: ''
+  display: inline-block
+  width: 28px
+  height: 28px
+  border: 2px solid #BFBFBF
+  border-radius: 4px
+  margin-right: 12px
+  transition: all .2s ease-in-out
+
+.deliveryMarker_shopBasketThirdStep:checked+label::before
+  background-color: #010101
+  border-color: #010101
+  background-image: url('../img/svg/secondSection_page2/checkedMarker_osbOnFloor.svg') 
+  background-position: center
+  background-repeat: no-repeat
+  transition: all .2s ease-in-out
+
+.additionailInfHeadline_shopBasketThirdStep
+  font-style: normal
+  font-weight: bold
+  font-size: 48px
+  line-height: 60px
+  color: #010101
+  margin-bottom: 42px
+  @media screen and ( max-width: 426px)
+    text-align: center
+    margin-bottom: 20px
+  @media screen and ( max-width: 376px)
+    font-size: 36px
+
+.yourComments_shopBasketThirdStep
+  width: 100%
+  display: block
+  background-color: #F0EFEE
+  border: none
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  padding: 13px 0px 11px 20px
+  border-radius: 4px
+
+  &:hover
+    border: none
+    outline: none
+
+  &:focus
+    border: none
+    outline: none
+
+  &:active
+    border: none
+    outline: none
+
+/* 2 часть контента
+
+.mainContentPart2_shopBasketThirdStep
+  width: 25.7%
+  padding-left: 40px
+  @media screen and ( max-width: 1440px)
+    padding-left: 20px
+  @media screen and ( max-width: 1237px)
+    width: 20%
+  @media screen and ( max-width: 972px)
+    flex-wrap: wrap
+    width: 100%
+    padding-left: 0px
+    margin-bottom: 40px
+    display: flex
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+.part2Title_shopBasketThirdStep
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 4px
+  @media screen and ( max-width: 972px)
+    flex: 1 1 55%
+    text-align: right
+    padding-right: 20px
+  @media screen and ( max-width: 376px)
+    flex-basis: 100%
+    padding-right: 0px
+    text-align: center
+
+.part2Sum_shopBasketThirdStep
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  margin-bottom: 5px
+  @media screen and ( max-width: 972px)
+    flex: 1 1 45%
+    text-align: left
+  @media screen and ( max-width: 426px)
+    flex-basis: 30%
+  @media screen and ( max-width: 376px)
+    text-align: center
+
+.additionalInformation_shopBasketThirdStep
+  display: block
+  width: 100%
+  @media screen and ( max-width: 972px)
+    text-align: center
+    margin-bottom: 20px
+
+.totalWeight_shopBasketThirdStep
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-bottom: 4px
+  @media screen and ( max-width: 972px)
+    flex: 1 1 55%
+    text-align: right
+    padding-right: 20px
+
+.totalWeightQuantity_shopBasketThirdStep
+  display: block
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  color: #999999
+  margin-bottom: 39px
+  @media screen and ( max-width: 972px)
+    flex: 1 1 45%
+    text-align: left
+  @media screen and ( max-width: 426px)
+    margin-bottom: 20px
+
+/* Кнопка далее
+
+.btnNext_shopBasketThirdStep
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  padding-top: 13px
+  padding-bottom: 13px
+  line-height: 36px
+  color: #010101
+  outline: none
+  border: none
+  border-radius: 4px
+  background-color: #EC8B33
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out
+
+  &:hover
+    color: #EC8B33
+    background-color: #010101
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    background-color: #010101
+    transition: color 0.1s ease-in-out
+  @media screen and ( max-width: 972px)
+    width: 300px
+    margin: 0px auto
+
+/* Вторая секция. 11 страница. Корзина 2 этап
+
+.link1_page1
+  color: #EC8B33
+  text-decoration: underline
+  transition: color 0.1s ease-in-out
+
+  &:hover
+    color: #010101
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+.text2_1_page1
+  margin: 0px auto
+  margin-top: 41px
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  text-align: center
+  color: #EC8B33
+
+.text2_2_page1
+  margin: 0px auto
+  margin-top: 21px
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 36px
+  color: #010101
+  text-align: center
+
+.link2_page1
+  color: #EC8B33
+  text-decoration: underline
+  transition: color 0.1s ease-in-out
+
+  &:hover
+    color: #010101
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+.text3_1_page1
+  margin: 0px auto
+  margin-top: 41px
+  width: 100%
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  text-align: center
+  color: #EC8B33
+
+.text3_2_page1
+  margin: 0px auto
+  margin-top: 21px
+  width: 100%
+  font-style: normal
+  font-weight: normal
+  font-size: 20px
+  line-height: 34px
+  color: #010101
+  text-align: center
+
+.link3_page1
+  color: #EC8B33
+  text-decoration: underline
+  transition: color 0.1s ease-in-out
+
+  &:hover
+    color: #010101
+    transition: color 0.2s ease-in-out
+
+  &:active
+    color: #CA782E
+    transition: color 0.1s ease-in-out
+
+/* ДВЕНАДЦАТАЯ СТРАНИЦА. ОТЗЫВЫ
+/* Первая секция. 11 страница. Отзывы
+
+.sectionOne_review
+  width: 100%
+  display: block
+  border-bottom: 2px solid #F0EFEE
+
+.firstSection_review
+  position: relative
+  width: inherit
+  min-height: 1176px
+  display: flex
+  flex-direction: column
+
+/* ТРИНАЛЦАТАЯ СТРАНИЦА. КАТАЛОГ
+
+.mainContent_catalog
+  width: 100%
+  border-bottom: 2px solid #F0EFEE
+
+.content_catalog
+  width: 100%
+  padding-bottom: 80px
+  @media screen and ( max-width: 1400px)
+    padding-bottom: 0px
+  @media screen and ( max-width: 700px)
+    width: 90%
+    margin: 0px auto
+    
+
+/* Фильтр первого слайдера
+
+.tabs_catalog
+  width: 48.57%
+  display: flex
+  align-items: flex-start
+  border-bottom: none
+
+/* Вкладки первого фильтра
+
+.firstTabs_catalog
+  width: 47%
+  display: block
+  border: none
+  text-align: left
+  padding: 0px
+  padding-top: 15px
+  background-color: inherit
+  border-top: 2px solid #C3BDB9
+  margin-right: 40px
+  flex: 1
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  transition: all .2s ease-in-out
+
+  &:last-of-type
+    margin-right: 0px
+
+  &:hover
+    border-top: 2px solid #EC8B33
+    color: #EC8B33
+    transition: all .2s ease-in-out
+
+  &:focus
+    outline: none
+
+  &:active
+    border-top: 2px solid #CA782E
+    color: #CA782E
+    transition: all .2s ease-in-out
+
+/* Заголовок
+
+.headline_catalog
+  font-style: normal
+  font-weight: bold
+  font-size: 48px
+  line-height: 60px
+  color: #010101
+  margin-bottom: 50px
+
+/* Шаблон подвала
+
+.footer
+  position: relative
+  max-width: 100%
+  background-color: #685A51
+  padding-top: 121px
+  padding-bottom: 50px
+  @media screen and ( max-width: 1024px)
+    padding-top: 60px 
+    padding-bottom: 100px
+  @media screen and ( max-width: 768px)
+    padding: 40px 0px
+    padding-bottom: 100px
+
+.footer_content
+  width: 100%
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 1024px)
+    flex-wrap: wrap
+
+.contacts
+  flex: 0 0 (180px * 100%) / 1400px
+  min-width: 174px
+  @media screen and ( max-width: 1024px)
+    flex-grow: 1
+    margin-right: 30px
+  @media screen and ( max-width: 768px)
+    flex-basis: 40%
+  @media screen and ( max-width: 425px)
+    margin-right: 0px
+    flex-basis: 100%
+
+  .contactsElement
+    max-width: 174px
+    margin-bottom: 24px
+    display: block
+    padding-left: 28px
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 20px
+    position: relative
+    color: #FFFFFF
+    text-decoration: none
+    transition: color 0.2s ease-in-out
+    
+    &::before
+      content: ""
+      position: absolute
+      width: 20px
+      height: 20px
+      left: 0px
+
+    &:hover
+      color: #EC8B33
+      transition: color 0.2s ease-in-out 
+
+  .phoneBorder
+    &::before
+      background-image: url("../img/svg/footer_page1/backCall_page1.svg")
+
+  .contactsAddress
+    &::before
+      background-image: url("../img/svg/footer_page1/warehouse_page1.svg")
+
+  .osbMail
+    &::before
+      background-image: url("../img/svg/footer_page1/mail_page1.svg")
+
+  .contactsDate
+    &::before
+      background-image: url("../img/svg/footer_page1/clock_page1.svg")
+
+.footerMenuHeadline
+  font-style: normal
+  font-weight: bold
+  font-size: 20px
+  line-height: 36px
+  align-items: center
+  color: #C3BDB9
+  margin-bottom: 23px
+
+.contactsCity
+  padding-left: 24px
+  padding-right: 11px
+  position: relative
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 20px
+  color: #ffffff
+  text-align: center
+
+.contactsTown
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 20px
+  color: #999999
+
+.contactsCity
+    &::before
+      content: ""
+      position: absolute
+      width: 12px
+      height: 16px
+      left: 0px
+      background-repeat: no-repeat
+      background-position: top
+      background-image: url("../img/svg/footer_page1/vector_page1.svg")
+
+    &::after
+      content: ""
+      width: 3px
+      height: 13px
+      position: absolute
+      right: 0px
+      top: 3px
+      background-image: url("../img/svg/footer_page1/group_page1.svg")
+
+.contactsIcon
+  @media screen and ( max-width: 1024px)
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    bottom: 30px
+
+  a
+    display: inline-block
+    height: 40px
+    width: 40px
+
+    &:not(:last-of-type)
+      margin-right: 12px
+
+/* Линк социальной сети
+
+.VK
+  transition: background-image 0.2s ease-in-out
+  background-image: url('../img/svg/footer_page1/vkIcon_default_page1.svg')
+
+  &:hover
+    transition: background-image 0.2s ease-in-out
+    background: url('../img/svg/footer_page1/vkIcon_hover_page1.svg')
+
+  &:active
+    transition: background-image 0.1s ease-in-out
+    background-image: url('../img/svg/footer_page1/vkIcon_active_page1.svg')
+
+/* Линк instagram
+
+.instagram
+  transition: background-image 0.2s ease-in-out
+  background-image: url('../img/svg/footer_page1/instagramIcon_default_page1.svg')
+
+  &:hover
+    transition: background-image 0.2s ease-in-out
+    background-image: url('../img/svg/footer_page1/instagramIcon_hover_page1.svg')
+
+  &:active
+    transition: background-image 0.1s ease-in-out
+    background-image: url('../img/svg/footer_page1/instagramIcon_active_page1.svg')
+
+/* Линк youtube
+
+.youtube
+  transition: background-image 0.2s ease-in-out
+  background-image: url('../img/svg/footer_page1/youtubeIcon_default_page1.svg')
+
+  &:hover
+    transition: background-image 0.2s ease-in-out
+    background-image: url('../img/svg/footer_page1/youtubeIcon_hover_page1.svg')
+
+  &:active
+    transition: background-image 0.1s ease-in-out
+    background-image: url('../img/svg/footer_page1/youtubeIcon_active_page1.svg')
+
+.footerMenu
+  flex: 0 1 (185px * 100%) / 1400px 
+  @media screen and ( max-width: 1024px)
+    flex-grow: 1
+    margin-right: 30px
+  @media screen and ( max-width: 768px)
+    flex-basis: 40%
+    margin-right: 0px
+  @media screen and ( max-width: 425px)
+    flex-basis: 100%
+    margin-bottom: 30px
+
+.footerMenuList
+  li
+    &:not(:last-of-type)
+      margin-bottom: 12px
+    
+    a
+      text-decoration: none
+      color: #FFFFFF
+      font-style: normal
+      font-weight: normal
+      font-size: 16px
+      line-height: 20px
+      transition: color 0.2s ease-in-out
+
+      &:hover
+        color: #EC8B33
+        transition: color 0.2s ease-in-out
+
+      &:active
+        color: #CA782E
+        transition: color 0.1s ease-in-out
+
+.footerMenuByApplication
+  flex: 0 1 (289px * 100%) / 1400px 
+  transition: color 0.2s ease-in-out
+  @media screen and ( max-width: 1024px)
+    flex-basis: 100%
+    order: 4
+  @media screen and ( max-width: 768px)
+    flex-grow: 1
+    flex-basis: 40%
+  @media screen and ( max-width: 425px)
+    flex-basis: 100%
+
+.footerMenuByApplication li
+  margin-bottom: 12px
+  font-style: normal
+  font-weight: normal
+  font-size: 16px
+  line-height: 20px
+  a
+    &:hover
+      color: #EC8B33
+      transition: color 0.2s ease-in-out
+
+    &:active
+      color: #CA782E
+      transition: color 0.1s ease-in-out
+
+  a
+    text-decoration: none
+    color: #FFFFFF
+    
+.moreEl
+  color: #C3BDB9
+  cursor: pointer
+
+  &:hover
+    text-decoration: underline
+
+.footerMenuByManufacturer
+  flex: 0 1 (244px * 100%) / 1400px 
+  @media screen and ( max-width: 1024px)
+    flex-grow: 1
+  @media screen and ( max-width: 768px)
+    flex-basis: 40%
+    margin-right: 30px
+  @media screen and ( max-width: 425px)
+    flex-basis: 100%
+    margin-right: 0px
+    margin-bottom: 30px
+
+.footerMenuByManufacturer li
+  &:not(:last-of-type)
+    margin-bottom: 12px
+
+  a
+    text-decoration: none
+    color: #FFFFFF
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 20px
+    transition: color 0.2s ease-in-out
+
+    &:hover
+      color: #EC8B33
+      transition: color 0.2s ease-in-out
+
+    &:active
+      color: #CA782E
+      transition: color 0.1s ease-in-out
+
+/* Кнопка скроллинга вверх
+
+.up-button
+  position: fixed
+  z-index: 10
+  padding: 0
+  bottom: 100px
+  right: 100px
+  transform: translateY(-250px)
+  outline: none
+  width: 64px
+  height: 64px
+  font-size: 36px
+  font-weight: bold
+  text-align: center
+  vertical-align: middle
+  border: 5px solid rgba(59, 54, 54, 0.6)
+  border-radius: 50%
+  display: inline-block
+  cursor: pointer
+  opacity: 0
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out
+  @media screen and ( max-width: 425px)
+    right: 50px
+    bottom: 50px
+  @media screen and ( max-width: 375px)
+    display: none
+
+  &:focus
+    outline: none
+
+  &:hover
+    background-color: rgba(59, 54, 54, 0.3)
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out
+
+  &:active
+    background-color: inherit
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, background-color 0.1s ease-in-out
+
+.shown
+  opacity: 0.8
+  transform: translateY(0px)
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out
+
+.activeBtnCardMaterial
+  background-color: #EC8B33
+  border-color: #EC8B33
+  color: #ffffff
+
+.tabSelect
+  border-color: #EC8B33
+  color: #EC8B33
+  transition: all .2s ease-in-out
+
+.selectButton
+  background-color: #EC8B33
+  border: 2px solid #EC8B33
+  color: #FFFFFF
+  transition: all .2s ease-in-out
+
+.shownButton_delivery
+  border-color: #EC8B33
+  transition: border-color 0.2s ease-in-out
+
+.accordion-button.filterBtnSelect
+  color: #010101
+  background-color: #FFFFFF
+
