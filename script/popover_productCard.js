@@ -1,27 +1,17 @@
-if (document.querySelector('.popover_productCard')) {
+if (document.querySelector('.addToShoppingCart_productCard')) {
+    let submitBtn_productCard = document.querySelector('.addToShoppingCart_productCard');
     let popover_productCard = document.querySelector('.popover_productCard');
     let popoverText_productCard = document.querySelector('.popoverText_productCard');
 
     let fadePopup_productCard = function () {
         popover_productCard.style.opacity = "0";
-        popover_productCard.style.display = "none";
     }
 
-    function openPopup (text, type) {
+    let openPopup = function () {
         popover_productCard.style.opacity = "1";
-        popoverText_productCard.textContent = text;
-        if (type === 'danger') {
-            popover_productCard.style.borderColor = "#e84d4d";
-            popoverText_productCard.style.color = "#e84d4d";
-        }
-        if (type === 'info') {
-            popover_productCard.style.borderColor = "#5bc793";
-            popoverText_productCard.style.color = "#5bc793";
-        }
-        if (type === 'warning') {
-            popover_productCard.style.borderColor = "#d9c836";
-            popoverText_productCard.style.color = "#d9c836";
-        }
-        setTimeout(fadePopup_productCard, 3000);
+        popoverText_productCard.textContent = submitBtn_productCard.dataset.popover;
+        setTimeout(fadePopup_productCard, 1000);
     }
+
+    submitBtn_productCard.addEventListener('click', openPopup);
 }
