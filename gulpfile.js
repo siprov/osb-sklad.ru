@@ -1,5 +1,5 @@
-let project_folder = 'C:/myProject/osb-project';
-let src_folder = "C:/myProject/osb-project";
+let project_folder = '.';
+let src_folder = ".";
 
 let path = {
 	build: {
@@ -24,7 +24,7 @@ let path = {
 		// pics: project_folder + "/pics/**/*.{jpg,jpeg,png,webp}",
 		js: src_folder + "/script/**/*.js"
 	},
-	clean:  project_folder, 
+	clean:  project_folder,
 };
 
 let {src, dest,} = require ('gulp'),

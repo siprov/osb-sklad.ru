@@ -1,4 +1,8 @@
-// Этот скрипт переключает состояние кнопок карточки товара и определяет значения параметров страницы в зависимости от выбронного значения толщины
+// Этот скрипт переключает состояние кнопок карточки товара и
+// определяет значения параметров страницы в зависимости от выбронного значения толщины
+// valueSender_productCard.js
+
+
 if (document.querySelector('.thicknessButtons_productCard')) {
     let btns_productCard = document.querySelectorAll('.thicknessButton_productCard');
     let price_productCard = document.querySelector('.priceForPieceValue_productCard');
@@ -14,12 +18,13 @@ if (document.querySelector('.thicknessButtons_productCard')) {
         btnsArray_productCard.push(btn)
     }
 
-    price_productCard.textContent = btnsArray_productCard[0].dataset.price;
-    priceForMeter.textContent = btnsArray_productCard[0].dataset.priceForMeter;
-    inStock_productCard.textContent = btnsArray_productCard[0].dataset.count;
-    thicknessCharacteristic_productCard.textContent = btnsArray_productCard[0].dataset.thicknessFilter;
-    weightCharacteristic_productCard.textContent = btnsArray_productCard[0].dataset.weightFilter;
-    hiddenValue.value = btnsArray_productCard[0].dataset.id;
+    let active_btn = document.querySelector('.selectButton')
+    price_productCard.textContent = active_btn.dataset.price;
+    priceForMeter.textContent = active_btn.dataset.priceForMeter;
+    inStock_productCard.textContent = active_btn.dataset.count;
+    thicknessCharacteristic_productCard.textContent = active_btn.dataset.thicknessFilter;
+    weightCharacteristic_productCard.textContent = active_btn.dataset.weightFilter;
+    hiddenValue.value = active_btn.dataset.id;
 
     for (let i = 0; i <= btnsArray_productCard.length - 1; i ++) {
         btnsArray_productCard[i].onclick = function () {
