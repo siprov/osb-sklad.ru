@@ -9196,6 +9196,8 @@ input::-webkit-inner-spin-button {
 .newsImg {
   width: 68.60%;
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media screen and (max-width: 769px) {
