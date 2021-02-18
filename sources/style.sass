@@ -3112,14 +3112,61 @@ header
   @media screen and ( max-width: 619px)
     flex-direction: column
 
+  @media screen and ( max-width: 425px)
+    margin-bottom: 20px
+
+/* Контент второй секции. 2 страница. OSB на пол
+
+.secondSectionContent_osbOnFloor
+  width: 100%
+  display: flex
+  justify-content: space-between
+  @media screen and ( max-width: 1006px)
+    flex-direction: column
+
+  .productCards
+    width: 100%
+  @media screen and ( max-width: 1024px)
+    .productCard
+      padding-bottom: 40px
+  @media screen and ( max-width: 1000px)
+    > .productCards
+      width: 100%
+      margin-top: 20px
+      .productCard
+        @media screen and ( max-width: 704px)
+          flex: 1 1 40%
+
+        @media screen and ( max-width: 455px)
+          flex-basis: 100%
+          padding-bottom: 20px
+          &:last-of-type
+            padding-bottom: 0px
+          
+/* Фильтр
+/* Заголовок
+
+.filterCollapsed_osbOnFloor
+  width: 320px
+  margin-right: 40px
+  @media screen and ( max-width: 1440px)
+    width: 220px
+  @media screen and ( max-width: 1006px)
+    margin-right: 0px
+    margin-bottom: 40px
+    width: 100%
+  @media screen and ( max-width: 425px)
+    margin-bottom: 0px
+
 .collapseFilter_osbOnFloor
   text-align: center
   margin-bottom: 5px
   display: none
-  @media screen and ( max-width: 1000px)
+  @media screen and ( max-width: 1006px)
     display: block
 
   .collapseFilterBtn_osbOnFloor
+    width: 320px
     border-radius: 4px
     padding: 12px 60px
     background-color: #010101
@@ -3138,14 +3185,28 @@ header
 
     &:focus
       box-shadow: none
+    @media screen and ( max-width: 425px)
+      width: 100%
+      margin-bottom: 10px
 
 .filterCollapse_osbOnFloor
+  width: 320px
+  @media screen and ( max-width: 1440px)
+    width: 220px
+  @media screen and ( max-width: 1006px)
+    width: 80%
+    margin: 0px auto
+  @media screen and ( max-width: 425px)
+    width: 100%
   .card
+    padding: 0px
     border: none
+    @media screen and ( max-width: 1006px)
+      padding-top: 1rem
 
     .secondSectionOptions_osbOnFloor
       display: block
-      width: 80%
+      width: 100%
       margin: 0px auto
       text-align: center
       @media screen and ( max-width: 768px)
@@ -3186,32 +3247,6 @@ header
   outline: none
   border: none
 
-/* Контент второй секции. 2 страница. OSB на пол
-
-.secondSectionContent_osbOnFloor
-  width: 100%
-  display: flex
-  justify-content: space-between
-  @media screen and ( max-width: 1024px)
-    .productCard
-      padding-bottom: 40px
-  @media screen and ( max-width: 1000px)
-    > .productCards
-      width: 100%
-      margin-top: 20px
-      .productCard
-        @media screen and ( max-width: 704px)
-          flex: 1 1 40%
-
-        @media screen and ( max-width: 455px)
-          flex-basis: 100%
-          padding-bottom: 20px
-          &:last-of-type
-            padding-bottom: 0px
-          
-/* Фильтр
-/* Заголовок
-
 .secondSectionOptions_osbOnFloor
   width: 320px
   @media screen and ( max-width: 1440px)
@@ -3219,6 +3254,7 @@ header
   @media screen and ( max-width: 1000px)
     display: none
 
+  
 .filterHeadline_osbOnFloor
   width: 100%
   display: flex
@@ -3270,12 +3306,14 @@ header
   border-top: 1px solid #BFBFBF
   border-bottom: 1px solid #BFBFBF
 
-.criterionHeadline_osbOnFloor
+.accordion-button.criterionHeadline_osbOnFloor
   outline: none
   padding: 20px 0px
   font-weight: bold
   border-color: #BFBFBF
   border-bottom: none
+  background-color: #FFFFFF
+  color: #010101
 
   &:active
     background-color: #FFFFFF
@@ -3937,6 +3975,8 @@ header
   width: 22.85%
   display: block
   margin-left: 40px
+  .topMaterialSizeVariation_osbOnFloor
+    display: none
 
 .topMaterial2Pic_osbOnFloor
   display: block
@@ -8903,4 +8943,3 @@ input::-webkit-inner-spin-button
 .accordion-button.filterBtnSelect
   color: #010101
   background-color: #FFFFFF
-
