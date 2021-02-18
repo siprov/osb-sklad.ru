@@ -1,5 +1,5 @@
-let project_folder = 'C:/myProject/osb-project';
-let src_folder = "C:/myProject/osb-project";
+let project_folder = '.';
+let src_folder = ".";
 
 let path = {
 	build: {
