@@ -4686,19 +4686,109 @@ header {
   }
 }
 
+@media screen and (max-width: 425px) {
+  .secondSectionMenu_osbOnFloor {
+    margin-bottom: 20px;
+  }
+}
+
+/* Контент второй секции. 2 страница. OSB на пол */
+.secondSectionContent_osbOnFloor {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 1006px) {
+  .secondSectionContent_osbOnFloor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.secondSectionContent_osbOnFloor .productCards {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .secondSectionContent_osbOnFloor .productCard {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .secondSectionContent_osbOnFloor > .productCards {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) and (max-width: 704px) {
+  .secondSectionContent_osbOnFloor > .productCards .productCard {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 40%;
+            flex: 1 1 40%;
+  }
+}
+
+@media screen and (max-width: 1000px) and (max-width: 455px) {
+  .secondSectionContent_osbOnFloor > .productCards .productCard {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    padding-bottom: 20px;
+  }
+  .secondSectionContent_osbOnFloor > .productCards .productCard:last-of-type {
+    padding-bottom: 0px;
+  }
+}
+
+/* Фильтр */
+/* Заголовок */
+.filterCollapsed_osbOnFloor {
+  width: 320px;
+  margin-right: 40px;
+}
+
+@media screen and (max-width: 1440px) {
+  .filterCollapsed_osbOnFloor {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 1006px) {
+  .filterCollapsed_osbOnFloor {
+    margin-right: 0px;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .filterCollapsed_osbOnFloor {
+    margin-bottom: 0px;
+  }
+}
+
 .collapseFilter_osbOnFloor {
   text-align: center;
   margin-bottom: 5px;
   display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1006px) {
   .collapseFilter_osbOnFloor {
     display: block;
   }
 }
 
 .collapseFilter_osbOnFloor .collapseFilterBtn_osbOnFloor {
+  width: 320px;
   border-radius: 4px;
   padding: 12px 60px;
   background-color: #010101;
@@ -4726,13 +4816,50 @@ header {
           box-shadow: none;
 }
 
+@media screen and (max-width: 425px) {
+  .collapseFilter_osbOnFloor .collapseFilterBtn_osbOnFloor {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.filterCollapse_osbOnFloor {
+  width: 320px;
+}
+
+@media screen and (max-width: 1440px) {
+  .filterCollapse_osbOnFloor {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 1006px) {
+  .filterCollapse_osbOnFloor {
+    width: 80%;
+    margin: 0px auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .filterCollapse_osbOnFloor {
+    width: 100%;
+  }
+}
+
 .filterCollapse_osbOnFloor .card {
+  padding: 0px;
   border: none;
+}
+
+@media screen and (max-width: 1006px) {
+  .filterCollapse_osbOnFloor .card {
+    padding-top: 1rem;
+  }
 }
 
 .filterCollapse_osbOnFloor .card .secondSectionOptions_osbOnFloor {
   display: block;
-  width: 80%;
+  width: 100%;
   margin: 0px auto;
   text-align: center;
 }
@@ -4799,51 +4926,6 @@ header {
   border: none;
 }
 
-/* Контент второй секции. 2 страница. OSB на пол */
-.secondSectionContent_osbOnFloor {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-@media screen and (max-width: 1024px) {
-  .secondSectionContent_osbOnFloor .productCard {
-    padding-bottom: 40px;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .secondSectionContent_osbOnFloor > .productCards {
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-
-@media screen and (max-width: 1000px) and (max-width: 704px) {
-  .secondSectionContent_osbOnFloor > .productCards .productCard {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 40%;
-            flex: 1 1 40%;
-  }
-}
-
-@media screen and (max-width: 1000px) and (max-width: 455px) {
-  .secondSectionContent_osbOnFloor > .productCards .productCard {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    padding-bottom: 20px;
-  }
-  .secondSectionContent_osbOnFloor > .productCards .productCard:last-of-type {
-    padding-bottom: 0px;
-  }
-}
-
-/* Фильтр */
-/* Заголовок */
 .secondSectionOptions_osbOnFloor {
   width: 320px;
 }
@@ -4922,19 +5004,21 @@ header {
   border-bottom: 1px solid #BFBFBF;
 }
 
-.criterionHeadline_osbOnFloor {
+.accordion-button.criterionHeadline_osbOnFloor {
   outline: none;
   padding: 20px 0px;
   font-weight: bold;
   border-color: #BFBFBF;
   border-bottom: none;
+  background-color: #FFFFFF;
+  color: #010101;
 }
 
-.criterionHeadline_osbOnFloor:active {
+.accordion-button.criterionHeadline_osbOnFloor:active {
   background-color: #FFFFFF;
 }
 
-.criterionHeadline_osbOnFloor:focus {
+.accordion-button.criterionHeadline_osbOnFloor:focus {
   color: #010101;
   background-color: #FFFFFF;
   outline: none;
@@ -5904,6 +5988,10 @@ header {
   width: 22.85%;
   display: block;
   margin-left: 40px;
+}
+
+.topMaterial_osbOnFloor .topMaterialSizeVariation_osbOnFloor {
+  display: none;
 }
 
 .topMaterial2Pic_osbOnFloor {
