@@ -39,7 +39,10 @@ if (document.querySelector('.thicknessButtons_productCard')) {
     }
 
     function changeProductName(obj){
-        document.getElementById('productHeight').innerHTML = obj.thicknessFilter
+        document.querySelectorAll('.productHeight').forEach(element => {
+            element.innerHTML = obj.thicknessFilter
+        })
+
     }
 
     document.addEventListener('DOMContentLoaded',() => {
