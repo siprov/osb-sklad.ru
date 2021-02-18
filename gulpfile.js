@@ -24,7 +24,7 @@ let path = {
 		// pics: project_folder + "/pics/**/*.{jpg,jpeg,png,webp}",
 		js: src_folder + "/script/**/*.js"
 	},
-	clean:  project_folder, 
+	clean:  project_folder,
 };
 
 let {src, dest,} = require ('gulp'),
